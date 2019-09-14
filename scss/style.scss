@@ -38,9 +38,9 @@ li > a {
 }
 
 .logo {
-    width: 88px;
-    height: 25px;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: 120px;
+    height: 30px;
+    background-color: #fff;
     color: $green;
     position: relative;
     border-radius: 3px;
@@ -48,22 +48,27 @@ li > a {
     h3 {
         position: absolute;
         top: 50%;
-        left: 0;
+        left: 10px;
         transform: translateY(-50%);
         z-index: 2;
-        color: #fff;
-        mix-blend-mode: difference;
+        color: #000;
+        font-size: 1.2em;
     }
 
     div {
         position: absolute;
         top: 50%;
-        left: 60%;
+        left: 75%;
         transform: translate(-50%, -50%);
         background-color: #000;
-        width: 80%;
+        color: #fff;
+        width: 50%;
         height: 100%;
-        border-radius: 3px;
+        border-radius: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
     }
 }
 
@@ -76,12 +81,15 @@ header {
         height: 90px;
         padding: 0 80px;
         color: #fff;
-        background: $green;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-weight: bold;
         font-size: 1em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
 
         ul, li {
             list-style: none;
@@ -129,4 +137,119 @@ header {
             }
         }
     }
+
+    .slider {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+
+        .slide_arrows {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(100, 188, 144, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+            font-size: 1em;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+        .slide_arrows.prev {
+            left: 20px;
+            transform: translate(-100px, -50%);
+        }
+        .slide_arrows.next {
+            right: 20px;
+            transform: translate(100px, -50%);
+        }
+        &:hover .slide_arrows {
+            transform: translate(0, -50%);
+        }
+
+        .slides_wrap {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            transition: all 0.5s;
+
+            .slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                
+
+                &:nth-child(1) {
+                    background: linear-gradient(rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.2)), url(../img/slide1.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(2) {
+                    background: linear-gradient(rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.2)), url(../img/slide2.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(3) {
+                    background: linear-gradient(rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.2)), url(../img/slide3.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(4) {
+                    background: linear-gradient(rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.2)), url(../img/slide4.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+
+        #slides_control {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            label {
+                display: inline-flex;
+                flex-direction: row-reverse;
+                transition: all 0.2s;
+                margin: 3px;
+
+                span {
+                    display: flex;
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid rgb(9, 255, 163);
+                    border-radius: 50%;
+                    transition: all 0.2s;
+                }
+
+                &:hover {
+                    span {
+                        background-color: rgba(9, 255, 163, 0.6);
+                    }
+                }
+
+                input {
+                    display: none;
+
+                    &:checked + span {
+                        background-color: rgba(9, 255, 163, 1);
+                    }
+                }
+
+            }
+        }
+    }
+
+    
+
+    
 }

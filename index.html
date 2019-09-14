@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,8 +14,10 @@
   <header>
     <nav class="nav-top">
       <div class="logo">
-        <h3>Help Desk</h3>
-        <div></div>
+        <h3>Help </h3>
+        <div>
+          <span>Desk</span>
+        </div>
       </div>
       <ul class="menu">
         <li class="menu-item"><a href="#">Głowna</a></li>
@@ -32,7 +35,27 @@
         </div>
       </div>
     </nav>
+    <div class="slider">
+        <div class="slide_arrows prev">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+        <div class="slide_arrows next">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="slides_wrap">
+          <div class="slide"></div>
+          <div class="slide"></div>
+          <div class="slide"></div>
+          <div class="slide"></div>
+        </div>
+
+        <div id="slides_control"></div>
+    </div>
   </header>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/slider.js"></script>
 
 </body>
 </html>
