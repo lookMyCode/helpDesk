@@ -1,0 +1,11 @@
+/* Header */
+@media only screen and (max-width: 1024px) {
+  nav.nav-top {
+    padding: 50px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .menu {
+    display: none;
+  }
+}
