@@ -12,6 +12,7 @@ $blue: #00f;
 * {
   padding: 0;
   margin: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
@@ -40,35 +41,29 @@ li > a {
 .logo {
     width: 120px;
     height: 30px;
-    background-color: #fff;
-    color: $green;
     position: relative;
     border-radius: 3px;
+    overflow: hidden;
 
-    h3 {
+    div{
         position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translateY(-50%);
-        z-index: 2;
-        color: #000;
-        font-size: 1.2em;
-    }
-
-    div {
-        position: absolute;
-        top: 50%;
-        left: 75%;
-        transform: translate(-50%, -50%);
-        background-color: #000;
-        color: #fff;
+        top: 0;
         width: 50%;
-        height: 100%;
-        border-radius: 1px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.2em;
+        height: 100%;
+    }
+
+    div:first-child {
+        color: #000;
+        background-color: #fff;
+        left: 0;
+    }
+    div:last-child {
+        color: #fff;
+        background-color: #000;
+        left: 50%;
     }
 }
 
@@ -101,6 +96,11 @@ header {
 
             li {
                 margin: 0 5px;
+                transition: 0.3s;
+
+                &:hover {
+                    color: lighten($green, 30%);
+                }
             }
         }
 
@@ -132,7 +132,7 @@ header {
 
                 &:hover {
                     border-color: $blue;
-                    color: blue;
+                    background-color: $blue;
                 }
             }
         }
@@ -207,6 +207,43 @@ header {
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
+
+                .slide-content {
+                    margin-top: 150px;
+                    margin-left: 120px;
+                    width: 50%;
+                    color: #fff;
+
+                    h2 {
+                        font-size: 2.2em;
+                        font-weight: bold;
+                        margin-bottom: 30px;
+                    }
+
+                    p {
+                        margin: 5px 0;
+                        font-size: 1.5em;
+                    }
+
+                    .slide-content-btn {
+                        margin-top: 30px;
+                        width: 50%;
+                        height: 60px;
+                        background-color: #0CCEC0;
+                        border-radius: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1.5em;
+                        font-weight: bold;
+                        transition: 0.3s;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: $blue;
+                        }
+                    }
+                }
             }
         }
 
@@ -252,4 +289,110 @@ header {
     
 
     
+}
+
+#registration-form-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    #registration-form {
+        width: auto;
+        height: auto;
+        background-color: #fff;
+        border: 2px solid $green;
+        padding: 50px;
+        position: relative;
+        border-radius: 10px;
+        cursor: pointer;
+
+        #reg-close-btn {
+            position: absolute;
+            padding: 5px;
+            top: 5px;
+            right: 5px;
+            font-size: 2em;
+            color: #060;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                color: #f60;
+            }
+        }
+
+        .form-content {
+            width: 500px;
+            height: 100%;
+
+            h3 {
+                text-transform: uppercase;
+                font-size: 2em;
+                text-align: center;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+
+            .form-row {
+                width: 100%;
+                margin: 5px 0;
+
+                label {
+                    margin: 0 5px;
+
+                    span {
+                        margin: 0 5px;
+                    }
+                }
+            }
+
+            input.form-row {
+                padding: 12px 6px;
+                color: #747474;
+                border: 1px solid #ECECEC;
+                border-radius: 3px;
+                font-size: 0.9em;
+                background-color: #F6F7F8;
+            }
+
+            input.form-row::placeholder {
+                color: #aaa;
+            }
+
+            p {
+                color: #486;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+
+            .form-registration-btn {
+                width: 100%;
+                height: 45px;
+                background-color: #0CCEC0;
+                transition: 0.2s;
+                color: #fff;
+                border-radius: 3px;
+                font-size: 1.1em;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 30px;
+
+                &:hover {
+                    background-color: $blue;
+                }
+            }
+        }
+    }
 }
