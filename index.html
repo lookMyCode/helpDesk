@@ -10,6 +10,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <div id="preloader-wrap">
+    <div id="preloader">
+      <h3>Help Desk</h3>
+      <dov class="preloader-block"></dov>
+    </div>
+  </div>
   
   <header>
     <nav class="nav-top">
@@ -25,8 +32,8 @@
         <li class="menu-item"><a href="#">Głowna</a></li>
         <li class="menu-item"><a href="#">Ogłoszenia</a></li>
         <li class="menu-item"><a href="#">Profili</a></li>
-        <li class="menu-item"><a href="#">O nas</a></li>
-        <li class="menu-item"><a href="#">Kontakt</a></li>
+        <!--<li class="menu-item"><a href="#">O nas</a></li>
+        <li class="menu-item"><a href="#">Kontakt</a></li>-->
       </ul>
       <div class="account">
         <div class="acc-btn">
@@ -107,9 +114,9 @@
         <div id="slides_control"></div>
     </div>
   </header>
-  <div id="registration-form-wrap">
-    <div id="registration-form">
-      <div id="reg-close-btn">
+  <div class="acc-modal-window-wrap" id="registration-form-wrap">
+    <div class="acc-modal-window" id="registration-form">
+      <div class="acc-modal-window-close-btn" id="reg-close-btn">
           <i class="fas fa-times"></i>
       </div>
       <div class="form-content">
@@ -135,10 +142,26 @@
           Kontynując przyjmujesz <a href="#">przypisy i prawiła</a> naszej strony
         </p>
 
-        <div class="form-registration-btn"><span>Zarejestruj się</span></div>
+        <div class="acc-modal-window-btn"><span>Zarejestruj się</span></div>
       </div>
     </div>
   </div>
+
+  <div class="acc-modal-window-wrap" id="login-form-wrap">
+      <div class="acc-modal-window" id="login-form">
+        <div class="acc-modal-window-close-btn" id="login-close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="form-content">
+          <h3>Logowanie</h3>
+  
+          <input type="email" placeholder="Email" class="form-row">
+          <input type="password" placeholder="Hasło" class="form-row">
+            
+          <div class="acc-modal-window-btn"><span>Załoguj się</span></div>
+        </div>
+      </div>
+    </div>
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/slider.js"></script>

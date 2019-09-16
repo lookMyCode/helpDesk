@@ -1,6 +1,8 @@
 /* SCSS */
 /* Variables */
 /* End variables */
+/* Mixins */
+/* End mixins */
 /* Reset CSS */
 * {
   padding: 0;
@@ -42,10 +44,10 @@ li > a {
   position: absolute;
   top: 0;
   width: 50%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 .logo div:first-child {
   color: #000;
@@ -58,9 +60,49 @@ li > a {
   left: 50%;
 }
 
+/* Preloader */
+#preloader-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #888;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#preloader-wrap #preloader {
+  width: 120px;
+  height: 30px;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+#preloader-wrap #preloader h3 {
+  color: #fff;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+#preloader-wrap #preloader .preloader-block {
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  animation: loader 2s infinite ease-in-out;
+}
+
+/* Header */
 header {
   width: 100%;
-  min-height: 100vh;
+  height: auto;
 }
 header nav.nav-top {
   width: 100%;
@@ -121,7 +163,7 @@ header nav.nav-top .account .acc-btn:hover {
 }
 header .slider {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -248,7 +290,7 @@ header .slider #slides_control label input:checked + span {
   background-color: #09ffa3;
 }
 
-#registration-form-wrap {
+.acc-modal-window-wrap {
   position: fixed;
   top: 0;
   left: 0;
@@ -259,9 +301,8 @@ header .slider #slides_control label input:checked + span {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
 }
-#registration-form-wrap #registration-form {
+.acc-modal-window-wrap .acc-modal-window {
   width: auto;
   height: auto;
   background-color: #fff;
@@ -271,7 +312,7 @@ header .slider #slides_control label input:checked + span {
   border-radius: 10px;
   cursor: pointer;
 }
-#registration-form-wrap #registration-form #reg-close-btn {
+.acc-modal-window-wrap .acc-modal-window .acc-modal-window-close-btn {
   position: absolute;
   padding: 5px;
   top: 5px;
@@ -281,31 +322,31 @@ header .slider #slides_control label input:checked + span {
   transition: 0.2s;
   cursor: pointer;
 }
-#registration-form-wrap #registration-form #reg-close-btn:hover {
+.acc-modal-window-wrap .acc-modal-window .acc-modal-window-close-btn:hover {
   color: #f60;
 }
-#registration-form-wrap #registration-form .form-content {
+.acc-modal-window-wrap .acc-modal-window .form-content {
   width: 500px;
   height: 100%;
 }
-#registration-form-wrap #registration-form .form-content h3 {
+.acc-modal-window-wrap .acc-modal-window .form-content h3 {
   text-transform: uppercase;
   font-size: 2em;
   text-align: center;
   font-weight: bold;
   margin-bottom: 30px;
 }
-#registration-form-wrap #registration-form .form-content .form-row {
+.acc-modal-window-wrap .acc-modal-window .form-content .form-row {
   width: 100%;
   margin: 5px 0;
 }
-#registration-form-wrap #registration-form .form-content .form-row label {
+.acc-modal-window-wrap .acc-modal-window .form-content .form-row label {
   margin: 0 5px;
 }
-#registration-form-wrap #registration-form .form-content .form-row label span {
+.acc-modal-window-wrap .acc-modal-window .form-content .form-row label span {
   margin: 0 5px;
 }
-#registration-form-wrap #registration-form .form-content input.form-row {
+.acc-modal-window-wrap .acc-modal-window .form-content input.form-row {
   padding: 12px 6px;
   color: #747474;
   border: 1px solid #ECECEC;
@@ -313,16 +354,16 @@ header .slider #slides_control label input:checked + span {
   font-size: 0.9em;
   background-color: #F6F7F8;
 }
-#registration-form-wrap #registration-form .form-content input.form-row::placeholder {
+.acc-modal-window-wrap .acc-modal-window .form-content input.form-row::placeholder {
   color: #aaa;
 }
-#registration-form-wrap #registration-form .form-content p {
+.acc-modal-window-wrap .acc-modal-window .form-content p {
   color: #486;
 }
-#registration-form-wrap #registration-form .form-content p a {
+.acc-modal-window-wrap .acc-modal-window .form-content p a {
   text-decoration: underline;
 }
-#registration-form-wrap #registration-form .form-content .form-registration-btn {
+.acc-modal-window-wrap .acc-modal-window .form-content .acc-modal-window-btn {
   width: 100%;
   height: 45px;
   background-color: #0CCEC0;
@@ -336,6 +377,22 @@ header .slider #slides_control label input:checked + span {
   align-items: center;
   margin-top: 30px;
 }
-#registration-form-wrap #registration-form .form-content .form-registration-btn:hover {
+.acc-modal-window-wrap .acc-modal-window .form-content .acc-modal-window-btn:hover {
   background-color: #00f;
+}
+
+#registration-form-wrap, #login-form-wrap {
+  display: none;
+}
+
+@keyframes loader {
+  0% {
+    left: -25%;
+  }
+  50% {
+    left: 75%;
+  }
+  100% {
+    left: -25%;
+  }
 }

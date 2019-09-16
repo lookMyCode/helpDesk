@@ -5,8 +5,27 @@ $ff: 'Lato', sans-serif;
 $green: #41f01d;
 $blue: #00f;
 
-
 /* End variables */
+
+/* Mixins */
+@mixin blockSize($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin position($p, $t, $l) {
+    position: $p;
+    top: $t;
+    left: $l;
+}
+
+@mixin contentCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* End mixins */
 
 /* Reset CSS */
 * {
@@ -20,8 +39,7 @@ $blue: #00f;
 body {
     font-size: 16px;
     font-family: $ff;
-    width: 100%;
-    height: auto;
+    @include blockSize(100%, auto);
     min-height: 100vh;
 }
 
@@ -32,27 +50,22 @@ a {
 
 li > a {
     display: block;
-    width: 100%;
-    height: 100%;
+    @include blockSize(100%, 100%);
     text-align: center;
     padding: 5px 10px;
 }
 
 .logo {
-    width: 120px;
-    height: 30px;
+    @include blockSize(120px, 30px);
     position: relative;
     border-radius: 3px;
     overflow: hidden;
 
-    div{
+    div {
         position: absolute;
         top: 0;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
+        @include blockSize(50%, 100%);
+        @include contentCenter;
     }
 
     div:first-child {
@@ -67,13 +80,45 @@ li > a {
     }
 }
 
+/* Preloader */
+#preloader-wrap {
+    @include position(fixed, 0, 0);
+    @include blockSize(100%, 100%);
+    background-color: #888;
+    z-index: 999;
+    @include contentCenter;
+    display: none;
+
+    #preloader {
+        @include blockSize(120px, 30px);
+        position: relative;
+        border-radius: 3px;
+        overflow: hidden;
+        @include contentCenter;
+        background-color: #fff;
+
+        h3 {
+            color: #fff;
+            z-index: 2;
+            mix-blend-mode: difference;
+        }
+
+        .preloader-block {
+            @include blockSize(50%, 100%);
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            animation: loader 2s infinite ease-in-out;
+        }
+    }
+}
+
+/* Header */
 header {
-    width: 100%;
-    min-height: 100vh;
+    @include blockSize(100%, auto);    
 
     nav.nav-top {
-        width: 100%;
-        height: 90px;
+        @include blockSize(100%, 90px);
         padding: 0 80px;
         color: #fff;
         display: flex;
@@ -81,9 +126,7 @@ header {
         align-items: center;
         font-weight: bold;
         font-size: 1em;
-        position: absolute;
-        top: 0;
-        left: 0;
+        @include position(absolute, 0, 0);
         z-index: 2;
 
         ul, li {
@@ -110,11 +153,8 @@ header {
 
             .acc-btn {
                 margin: 0 10px;
-                width: 150px;
-                height: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include blockSize(150px, 50px);
+                @include contentCenter;
                 border: 1px solid #fff;
                 border-radius: 10px;
                 background-color: inherit;
@@ -139,20 +179,14 @@ header {
     }
 
     .slider {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        @include blockSize(100%, 100vh);
+        @include position(absolute, 0, 0);
         overflow: hidden;
 
         .slide_arrows {
-            width: 40px;
-            height: 40px;
+            @include blockSize(40px, 40px);
             background-color: rgba(100, 188, 144, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include contentCenter;
             color: #fff;
             position: absolute;
             top: 50%;
@@ -180,11 +214,8 @@ header {
             transition: all 0.5s;
 
             .slide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+                @include position(absolute, 0, 0);
+                @include blockSize(100%, 100%);
                 
 
                 &:nth-child(1) {
@@ -227,13 +258,10 @@ header {
 
                     .slide-content-btn {
                         margin-top: 30px;
-                        width: 50%;
-                        height: 60px;
+                        @include blockSize(50%, 60px);
                         background-color: #0CCEC0;
                         border-radius: 5px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        @include contentCenter;
                         font-size: 1.5em;
                         font-weight: bold;
                         transition: 0.3s;
@@ -261,8 +289,7 @@ header {
 
                 span {
                     display: flex;
-                    width: 12px;
-                    height: 12px;
+                    @include blockSize(12px, 12px);
                     border: 2px solid rgb(9, 255, 163);
                     border-radius: 50%;
                     transition: all 0.2s;
@@ -291,22 +318,15 @@ header {
     
 }
 
-#registration-form-wrap {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.acc-modal-window-wrap {
+    @include position(fixed, 0, 0);
+    @include blockSize(100%, 100%);
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
+    @include contentCenter;
 
-    #registration-form {
-        width: auto;
-        height: auto;
+    .acc-modal-window {
+        @include blockSize(auto, auto);
         background-color: #fff;
         border: 2px solid $green;
         padding: 50px;
@@ -314,7 +334,7 @@ header {
         border-radius: 10px;
         cursor: pointer;
 
-        #reg-close-btn {
+        .acc-modal-window-close-btn {
             position: absolute;
             padding: 5px;
             top: 5px;
@@ -330,8 +350,7 @@ header {
         }
 
         .form-content {
-            width: 500px;
-            height: 100%;
+            @include blockSize(500px, 100%);
 
             h3 {
                 text-transform: uppercase;
@@ -375,18 +394,15 @@ header {
                 }
             }
 
-            .form-registration-btn {
-                width: 100%;
-                height: 45px;
+            .acc-modal-window-btn {
+                @include blockSize(100%, 45px);
                 background-color: #0CCEC0;
                 transition: 0.2s;
                 color: #fff;
                 border-radius: 3px;
                 font-size: 1.1em;
                 font-weight: bold;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include contentCenter;
                 margin-top: 30px;
 
                 &:hover {
@@ -394,5 +410,21 @@ header {
                 }
             }
         }
+    }
+}
+
+#registration-form-wrap, #login-form-wrap {
+    display: none;
+}
+
+@keyframes loader {
+    0% {
+        left: -25%;
+    }
+    50% {
+        left: 75%;
+    }
+    100% {
+        left: -25%;
     }
 }
