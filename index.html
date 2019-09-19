@@ -7,7 +7,8 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/media.css">
 </head>
 <body>
 
@@ -19,7 +20,7 @@
   </div>
   
   <header>
-    <nav class="nav-top">
+    <nav class="nav-top"> <!-- Start menu -->
       <div class="logo">
         <div>
           <span>Help</span>
@@ -43,8 +44,26 @@
           <span>Załoguj</span>
         </div>
       </div>
+      <div class="account-min">
+        <div class="acc-btn" title="Zarejestruj">
+          <i class="far fa-address-book"></i>
+        </div>
+        <div class="acc-btn" title="Załoguj">
+            <i class="fas fa-sign-in-alt"></i>
+        </div>
+      </div>
+      <div id="min-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
-    <div class="slider">
+    <nav class="menu-min">
+      <ul>
+        <li class="menu-item"><a href="#">Głowna</a></li>
+        <li class="menu-item"><a href="#">Ogłoszenia</a></li>
+        <li class="menu-item"><a href="#">Profili</a></li>
+      </ul>
+    </nav> <!-- End menu -->
+    <div class="slider"> <!-- Start slider -->
         <div class="slide_arrows prev">
           <i class="fas fa-arrow-left"></i>
         </div>
@@ -58,7 +77,7 @@
               <h2>Uzyskaj to co chcech</h2>
               <div class="slide-content-text">
                 <p>Masz potrzebe w produkcie IT, ale nie masz na to finansów?</p>
-                <p>Czy możliwo masz zamoło pracowników dla realizacji twoich płanów?</p>
+                <p>Czy możliwo masz zamało pracowników dla realizacji twoich płanów?</p>
                 <p>Dołączaj się do nas i naszy wołontariuszy pomogą Ci!</p>
                 <p>To wszystko jest za darmo i zawsze tak będzie!</p>
               </div>
@@ -112,9 +131,9 @@
         </div>
 
         <div id="slides_control"></div>
-    </div>
+    </div> <!-- End slider -->
   </header>
-  <div class="acc-modal-window-wrap" id="registration-form-wrap">
+  <div class="acc-modal-window-wrap" id="registration-form-wrap"> <!-- Start modal windows -->
     <div class="acc-modal-window" id="registration-form">
       <div class="acc-modal-window-close-btn" id="reg-close-btn">
           <i class="fas fa-times"></i>
@@ -128,18 +147,17 @@
         <input type="text" placeholder="Imię lub nazwa firmy *" class="form-row">
         <input type="text" placeholder="Rodzaj dziajalności *" class="form-row">
         <div class="form-row">
-          <span>Twoja płec: </span>
+          <span>Kim jestesz *: </span>
           <label>
-            <input type="radio" name="sex"><span>Męszczyzna</span>
+            <input type="radio" name="sex"><span>Ogłoszeniodawca</span>
           </label>
           <label>
-            <input type="radio" name="sex"><span>Kobieta</span>
+            <input type="radio" name="sex"><span>Wołontariusz</span>
           </label>
         </div>
-        <input type="tel" placeholder="Numer telefonu" class="form-row">
 
         <p>
-          Kontynując przyjmujesz <a href="#">przypisy i prawiła</a> naszej strony
+          Kontynując przyjmujesz <a href="#">przypisy</a> naszej strony
         </p>
 
         <div class="acc-modal-window-btn"><span>Zarejestruj się</span></div>
@@ -148,20 +166,126 @@
   </div>
 
   <div class="acc-modal-window-wrap" id="login-form-wrap">
-      <div class="acc-modal-window" id="login-form">
-        <div class="acc-modal-window-close-btn" id="login-close-btn">
-            <i class="fas fa-times"></i>
-        </div>
-        <div class="form-content">
-          <h3>Logowanie</h3>
-  
-          <input type="email" placeholder="Email" class="form-row">
-          <input type="password" placeholder="Hasło" class="form-row">
-            
-          <div class="acc-modal-window-btn"><span>Załoguj się</span></div>
-        </div>
+    <div class="acc-modal-window" id="login-form">
+      <div class="acc-modal-window-close-btn" id="login-close-btn">
+          <i class="fas fa-times"></i>
+      </div>
+      <div class="form-content">
+        <h3>Logowanie</h3>
+
+        <input type="email" placeholder="Email" class="form-row">
+        <input type="password" placeholder="Hasło" class="form-row">
+          
+        <div class="acc-modal-window-btn"><span>Załoguj się</span></div>
       </div>
     </div>
+  </div> <!-- End modal windows -->
+
+  <main>
+    <section id="about_us">
+      <h1>Help Desk - płatforma dla pomocy przez internet</h1>
+      <p>
+        Help Desk - to płatforma dla połączenia ludzi i firm jaki potrzebują znałeść fachowców dla darmowego rozwiązania swoich problem, jaki można załatwić zdalnie.
+      </p>
+      <p>
+        To jest świetna możliwość początkującym zawodowcam mieć znałeść pierwszy realny projekty. To jest darmowa nauka!
+      </p>
+      <p>
+        I w pierwszą kolejność to jest okazja pomóc innym.
+      </p>
+      <p>
+        IT, napisanie artykółów, tłumaczenia, zjęcia, dyzajn i wiele innego. Co Ci da używanie tej strony:
+      </p>
+      <div class="about_as-cards">
+        <div class="about_as-card">
+          <i class="far fa-chart-bar"></i>
+          <h3>Jak freelance, tylko za darmo!</h3>
+          <p>
+            Tylko zaczynasz swoją dziajalność? Czy może twoja firma ma słaby biudżet? Czy być może masz zadużo pracy i jestesz w stanie podzielić się ją? To jest piętkna okazia zaoszczędzić twoi finansy! Śmiało dodawaj ogłoszenia!
+          </p>
+        </div>
+        <div class="about_as-card">
+          <i class="far fa-images"></i>
+          <h3>Twoja praktyka i twoje portfolio!</h3>
+          <p>
+            Lubisz pomagać ludziam? Lub nie możesz znałeść pracę, bo brakuję doświadczenia? Nie straszą Ci wyzwania? Rejestruj się i rób projekty, załatw swoje portfolio i zdobydź wiedzę! 
+          </p>
+        </div>
+      </div>
+      
+    </section>
+    <aside>
+      <div class="ad">
+        <img src="img/face.jpg" alt="avatar" class="ad-photo">
+        <div class="ad-info">
+          <h6>Tworzenie HTML z PSD</h6>
+          <p>
+            <i class="far fa-star"></i>
+            <span>4,7</span>
+          </p>
+          <p>
+            <i class="far fa-arrow-alt-circle-right"></i>
+            <span>19.09.2019</span>
+          </p>
+        </div>
+        <div class="ad-description">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga magnam a ducimus exercitationem quidem odio autem suscipit aperiam in iusto necessitatibus voluptatem, aliquid soluta dolores temporibus vero dolorem ad alias.</p>
+        </div>
+      </div>
+      <div class="ad">
+        <img src="img/face.jpg" alt="avatar" class="ad-photo">
+        <div class="ad-info">
+          <h6>Tworzenie HTML z PSD</h6>
+          <p>
+            <i class="far fa-star"></i>
+            <span>4,7</span>
+          </p>
+          <p>
+            <i class="far fa-arrow-alt-circle-right"></i>
+            <span>19.09.2019</span>
+          </p>
+        </div>
+        <div class="ad-description">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga magnam a ducimus exercitationem quidem odio autem suscipit aperiam in iusto necessitatibus voluptatem, aliquid soluta dolores temporibus vero dolorem ad alias.</p>
+        </div>
+      </div>
+      <div class="ad">
+        <img src="img/face.jpg" alt="avatar" class="ad-photo">
+        <div class="ad-info">
+          <h6>Tworzenie HTML z PSD</h6>
+          <p>
+            <i class="far fa-star"></i>
+            <span>4,7</span>
+          </p>
+          <p>
+            <i class="far fa-arrow-alt-circle-right"></i>
+            <span>19.09.2019</span>
+          </p>
+        </div>
+        <div class="ad-description">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga magnam a ducimus exercitationem quidem odio autem suscipit aperiam in iusto necessitatibus voluptatem, aliquid soluta dolores temporibus vero dolorem ad alias.</p>
+        </div>
+      </div>
+    </aside>
+    <section id="statistic_counters">
+      <div class="stat_counter">
+        <span class="stat_num">96</span>
+        <span class="stat_description">Założonych kont</span>
+      </div>
+      <div class="stat_counter">
+        <span class="stat_num">722</span>
+        <span class="stat_description">Wejść na stronę</span>
+      </div>
+      <div class="stat_counter">
+        <span class="stat_num">161</span>
+        <span class="stat_description">Ogłoszeń</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+
+  </footer>
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/slider.js"></script>
