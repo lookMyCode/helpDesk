@@ -43,9 +43,11 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 
-    header, main, footer, nav, .slider, .slides_wrap, .slide, section, aside {
+    /*header, main, footer, nav, .slider, .slide, section, aside {
         max-width: 100vw;
-    }
+        width: 100%;
+        overflow-x: hidden;
+    }*/
 }
 
 a {
@@ -274,7 +276,7 @@ header {
     /* Slider */
     .slider {
         @include blockSize(100%, 100vh);
-        overflow: hidden;
+        overflow-x: hidden;
         max-width: 100vw;
 
         .slide_arrows {
@@ -288,23 +290,24 @@ header {
             font-size: 1em;
             transition: all 0.5s;
             cursor: pointer;
+            opacity: 0;
         }
         .slide_arrows.prev {
             left: 20px;
-            transform: translate(-100px, -50%);
         }
         .slide_arrows.next {
             right: 20px;
-            transform: translate(100px, -50%);
         }
         &:hover .slide_arrows {
-            transform: translate(0, -50%);
+            display: flex;
+            opacity: 1;
         }
 
         .slides_wrap {
             height: 100%;
             display: flex;
             flex-direction: row;
+            transform: translateX(0);
             transition: all 0.5s;
 
             .slide {
@@ -663,8 +666,39 @@ main {
 /* Footer */
 footer {
     width: 100%;
-    height: 300px;
     background-color: $blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+
+    a {
+        color: $green;
+        transition: 0.2s;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .logo {
+        margin: 25px 0;
+    }
+
+    .nav-bottom {
+        margin: 15px 0;
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+    }
+
+    .footer-contact, .footer-copy {
+        margin: 10px 10px;
+        text-align: center;
+    }
 }
 
 /* Preloader animation */

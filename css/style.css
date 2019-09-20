@@ -19,9 +19,11 @@ body {
   height: auto;
   min-height: 100vh;
   overflow-x: hidden;
-}
-body header, body main, body footer, body nav, body .slider, body .slides_wrap, body .slide, body section, body aside {
-  max-width: 100vw;
+  /*header, main, footer, nav, .slider, .slide, section, aside {
+      max-width: 100vw;
+      width: 100%;
+      overflow-x: hidden;
+  }*/
 }
 
 a {
@@ -254,7 +256,7 @@ header nav.menu-min ul li:hover {
 header .slider {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   max-width: 100vw;
 }
 header .slider .slide_arrows {
@@ -271,22 +273,23 @@ header .slider .slide_arrows {
   font-size: 1em;
   transition: all 0.5s;
   cursor: pointer;
+  opacity: 0;
 }
 header .slider .slide_arrows.prev {
   left: 20px;
-  transform: translate(-100px, -50%);
 }
 header .slider .slide_arrows.next {
   right: 20px;
-  transform: translate(100px, -50%);
 }
 header .slider:hover .slide_arrows {
-  transform: translate(0, -50%);
+  display: flex;
+  opacity: 1;
 }
 header .slider .slides_wrap {
   height: 100%;
   display: flex;
   flex-direction: row;
+  transform: translateX(0);
   transition: all 0.5s;
 }
 header .slider .slides_wrap .slide {
@@ -608,8 +611,33 @@ main #statistic_counters .stat_counter .stat_description {
 /* Footer */
 footer {
   width: 100%;
-  height: 300px;
   background-color: #750fc2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+footer a {
+  color: #41f01d;
+  transition: 0.2s;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer .logo {
+  margin: 25px 0;
+}
+footer .nav-bottom {
+  margin: 15px 0;
+}
+footer .nav-bottom ul {
+  list-style: none;
+  display: flex;
+}
+footer .footer-contact, footer .footer-copy {
+  margin: 10px 10px;
+  text-align: center;
 }
 
 /* Preloader animation */

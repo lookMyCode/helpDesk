@@ -94,7 +94,8 @@
     display: flex;
   }
   header .slider .slide_arrows {
-    display: none;
+    display: none !important;
+    opacity: 0;
   }
   header .slider .slides_wrap .slide .slide-content {
     margin-top: 90px;

@@ -152,7 +152,8 @@ $blue: #00f;
         .slider {
     
             .slide_arrows {
-                display: none;
+                display: none !important;
+                opacity: 0;
             }
     
             .slides_wrap {    
