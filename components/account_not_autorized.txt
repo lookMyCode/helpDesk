@@ -1,0 +1,6 @@
+<div class="acc-btn">
+    <span>Zarejestruj</span>
+</div>
+<div class="acc-btn login-btn">
+    <span>Załoguj</span>
+</div>

@@ -9,56 +9,24 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/media.css">
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 
   <div id="preloader-wrap">
     <div id="preloader">
-      <h3>Help Desk</h3>
-      <dov class="preloader-block"></dov>
+      <h3>Help Place</h3>
+      <div class="preloader-block"></div>
     </div>
   </div>
   
   <header>
     <nav class="nav-top"> <!-- Start menu -->
-      <div class="logo">
-        <div>
-          <span>Help</span>
-        </div>
-        <div>
-          <span>Desk</span>
-        </div>
-      </div>
-      <ul class="menu">
-        <li class="menu-item"><a href="#">Głowna</a></li>
-        <li class="menu-item"><a href="#">Ogłoszenia</a></li>
-        <li class="menu-item"><a href="#">Profili</a></li>
-      </ul>
-      <div class="account">
-        <div class="acc-btn">
-          <span>Zarejestruj</span>
-        </div>
-        <div class="acc-btn">
-          <span>Załoguj</span>
-        </div>
-      </div>
-      <div class="account-min">
-        <div class="acc-btn" title="Zarejestruj">
-          <i class="far fa-address-book"></i>
-        </div>
-        <div class="acc-btn" title="Załoguj">
-            <i class="fas fa-sign-in-alt"></i>
-        </div>
-      </div>
-      <div id="min-menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
+      
     </nav>
     <nav class="menu-min">
       <ul>
-        <li class="menu-item"><a href="#">Głowna</a></li>
-        <li class="menu-item"><a href="#">Ogłoszenia</a></li>
-        <li class="menu-item"><a href="#">Profili</a></li>
+        
       </ul>
     </nav> <!-- End menu -->
     <div class="slider"> <!-- Start slider -->
@@ -107,7 +75,7 @@
               <p>My łączymy firmy jaki mają ograniconny finansy i wołóntariuszej!</p>
               <p>Zrobimy to razem!</p>
             </div>
-            <div class="slide-content-btn">
+            <div class="slide-content-btn login-btn">
               <span>Załoguj się</span>
             </div>
           </div>
@@ -131,7 +99,7 @@
       <div id="slides_control"></div>
     </div> <!-- End slider -->
   </header>
-  <div class="acc-modal-window-wrap" id="registration-form-wrap"> <!-- Start modal windows -->
+  <!--<div class="acc-modal-window-wrap" id="registration-form-wrap"> 
     <div class="acc-modal-window" id="registration-form">
       <div class="acc-modal-window-close-btn" id="reg-close-btn">
           <i class="fas fa-times"></i>
@@ -161,29 +129,17 @@
         <div class="acc-modal-window-btn"><span>Zarejestruj się</span></div>
       </div>
     </div>
-  </div>
+  </div>-->
 
-  <div class="acc-modal-window-wrap" id="login-form-wrap">
-    <div class="acc-modal-window" id="login-form">
-      <div class="acc-modal-window-close-btn" id="login-close-btn">
-          <i class="fas fa-times"></i>
-      </div>
-      <div class="form-content">
-        <h3>Logowanie</h3>
-
-        <input type="email" placeholder="Email" class="form-row">
-        <input type="password" placeholder="Hasło" class="form-row">
-          
-        <div class="acc-modal-window-btn"><span>Załoguj się</span></div>
-      </div>
-    </div>
+  <div class="acc-modal-window-wrap" id="login-form-wrap"> <!-- Start modal windows -->
+    
   </div> <!-- End modal windows -->
 
   <main>
     <section id="about_us">
-      <h1>Help Desk - płatforma dla pomocy przez internet</h1>
+      <h1>Help Place - płatforma dla pomocy przez internet</h1>
       <p>
-        Help Desk - to płatforma dla połączenia ludzi i firm jaki potrzebują znałeść fachowców dla darmowego rozwiązania swoich problem, jaki można załatwić zdalnie.
+        Help Place - to płatforma dla połączenia ludzi i firm jaki potrzebują znałeść fachowców dla darmowego rozwiązania swoich problem, jaki można załatwić zdalnie.
       </p>
       <p>
         To jest świetna możliwość początkującym zawodowcam mieć znałeść pierwszy realny projekty. To jest darmowa nauka!
@@ -282,35 +238,14 @@
   </main>
 
   <footer>
-    <div class="logo">
-      <div>
-        <span>Help</span>
-      </div>
-      <div>
-        <span>Desk</span>
-      </div>
-    </div>
-    <nav class="nav-bottom">
-      <ul>
-        <li class="menu-item"><a href="#">Głowna</a></li>
-        <li class="menu-item"><a href="#">Ogłoszenia</a></li>
-        <li class="menu-item"><a href="#">Profili</a></li>
-      </ul>
-    </nav>
-    <div class="footer-contact">
-      <span>
-        Kontakt ze mną: <a href="mailto:dmytro-medynskyi@ukr.net">dmytro-medynskyi@ukr.net</a>
-      </span>
-    </div>
-    <div class="footer-copy">
-      <span>
-        Copyright © 2019 HelpDesk. Designed and developed by <a href="https://www.linkedin.com/in/dmytro-medynskyi-b947a1192/">Dmytro Medynskyi</a>
-      </span>
-    </div>
+    
   </footer>
 
   <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/before_load.js" ></script>
+  <script src="js/script.js"></script>
   <script src="js/slider.js"></script>
+  <script src="js/login.js"></script>
 
 </body>
 </html>

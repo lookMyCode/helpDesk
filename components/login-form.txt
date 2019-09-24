@@ -1,0 +1,15 @@
+<div class="acc-modal-window" id="login-form">
+    <div class="acc-modal-window-close-btn" id="login-close-btn">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="form-content">
+    <h3>Logowanie</h3>
+
+    <input type="email" placeholder="Email" class="form-row" id="login_email">
+    <input type="password" placeholder="Hasło" class="form-row" id="login_pass">
+
+    <p id="login_answer"></p>
+        
+    <div class="acc-modal-window-btn" id="login_btn"><span>Załoguj się</span></div>
+    </div>
+</div>

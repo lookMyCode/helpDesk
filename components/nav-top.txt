@@ -1,0 +1,18 @@
+<div class="logo">
+<div>
+    <span>Help</span>
+</div>
+<div>
+    <span>Place</span>
+</div>
+</div>
+<ul class="menu">
+    
+</ul>
+<div class="account">
+</div>
+<div class="account-min">
+</div>
+<div id="min-menu-btn">
+<i class="fas fa-bars"></i>
+</div>

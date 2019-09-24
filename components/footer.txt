@@ -1,0 +1,23 @@
+<div class="logo">
+    <div>
+    <span>Help</span>
+    </div>
+    <div>
+    <span>Place</span>
+    </div>
+</div>
+<nav class="nav-bottom">
+    <ul>
+    
+    </ul>
+</nav>
+<div class="footer-contact">
+    <span>
+    Kontakt ze mną: <a href="mailto:dmytro-medynskyi@ukr.net">dmytro-medynskyi@ukr.net</a>
+    </span>
+</div>
+<div class="footer-copy">
+    <span>
+    Copyright © 2019 HelpDesk. Designed and developed by <a href="https://www.linkedin.com/in/dmytro-medynskyi-b947a1192/">Dmytro Medynskyi</a>
+    </span>
+</div>

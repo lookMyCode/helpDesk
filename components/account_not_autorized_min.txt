@@ -1,0 +1,6 @@
+<div class="acc-btn" title="Zarejestruj">
+    <i class="far fa-address-book"></i>
+</div>
+<div class="acc-btn login-btn" title="Załoguj">
+    <i class="fas fa-sign-in-alt"></i>
+</div>

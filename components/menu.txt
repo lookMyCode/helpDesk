@@ -1,0 +1,3 @@
+<li class="menu-item"><a href="#">Głowna</a></li>
+<li class="menu-item"><a href="#">Ogłoszenia</a></li>
+<li class="menu-item"><a href="#">Profili</a></li>
