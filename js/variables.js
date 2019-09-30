@@ -1,0 +1,3 @@
+// Variables
+
+let auth = false;

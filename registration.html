@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/media.css">
+  <link rel="stylesheet" href="/css/registration.css">
 </head>
 <body>
 
@@ -36,12 +37,43 @@
 
   <main>
     
+    <h1>Rejestracja</h1>
+
+    <section class="registr-form">
+
+      <label class="form-row">
+        <span>Email: </span>
+        <input type="email" placeholder="kowalski@przyklad.pl" id="reg-mail">
+      </label>
+      <label class="form-row">
+        <span>Hasło: </span>
+        <input type="password" placeholder="TrudneHaslo1@" id="pass1">
+      </label>
+      <label class="form-row">
+        <span>Powtórz hasło: </span>
+        <input type="password" placeholder="TrudneHaslo1@" id="pass2">
+      </label>
+      <label class="form-row">
+        <span>Imię lub nazwa firmy: </span>
+        <input type="text" placeholder="Jan Kowalski lub Help-Place" id="reg-name">
+      </label>
+
+      <p>
+        Kontynując przyjmujesz <a href="#">przypisy</a> naszej strony
+      </p>
+
+      <p class="reg-warning"></p>
+
+      <div class="hp-btn" id="registr-btn"><span>Zarejestruj się</span></div>
+
+    </section>
+
   </main>
 
   <footer>
     
   </footer>
-  
+
   <div id="go_top">
     <a href="#header">
       <i class="fas fa-angle-double-up"></i>
@@ -58,7 +90,7 @@
   <script src="js/before_load.js" ></script>
   <script src="js/script.js"></script>
   <script src="js/login.js"></script>
-  
+  <script src="js/registration.js"></script>
 
 </body>
 </html>

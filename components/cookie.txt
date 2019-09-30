@@ -1,0 +1,4 @@
+<p>
+    Używając naszego serwisu pozwalasz urzywać nam pliki cookie oraz zgadzaś się z przypisami tej strony.
+</p>
+<div class="hp-btn" id="cookie-accept-btn"><span>OK</span></div>

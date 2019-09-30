@@ -1,0 +1,26 @@
+/* Variables */
+$ff: 'Lato', sans-serif;
+$green: #41f01d;
+$blue: rgb(117,15,194);
+
+/* End variables */
+
+/* Mixins */
+@mixin blockSize($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin position($p, $t, $l) {
+    position: $p;
+    top: $t;
+    left: $l;
+}
+
+@mixin contentCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* End mixins */

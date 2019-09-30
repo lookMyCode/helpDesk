@@ -34,6 +34,24 @@ li > a {
   padding: 5px 10px;
 }
 
+.hp-btn {
+  width: 100%;
+  height: 45px;
+  background-color: #0CCEC0;
+  transition: 0.2s;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.hp-btn:hover {
+  background-color: #750fc2;
+}
+
 .logo {
   width: 120px;
   height: 30px;
@@ -406,6 +424,47 @@ footer .nav-bottom ul {
 footer .footer-contact, footer .footer-copy {
   margin: 10px 10px;
   text-align: center;
+}
+
+.cookie-wrap {
+  background-color: #eee;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480px;
+  padding: 30px;
+  border-radius: 5px;
+  display: none;
+}
+.cookie-wrap p {
+  color: #888;
+  margin-bottom: 25px;
+}
+
+#go_top {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: #0CCEC0;
+  display: flex;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: 0.3s;
+}
+#go_top:hover {
+  background-color: #2cc30d;
+}
+#go_top a {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Preloader animation */

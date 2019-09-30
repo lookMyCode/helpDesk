@@ -1,29 +1,4 @@
-/* Variables */
-$ff: 'Lato', sans-serif;
-$green: #41f01d;
-$blue: #00f;
-
-/* End variables */
-
-/* Mixins */
-@mixin blockSize($w, $h) {
-    width: $w;
-    height: $h;
-}
-
-@mixin position($p, $t, $l) {
-    position: $p;
-    top: $t;
-    left: $l;
-}
-
-@mixin contentCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* End mixins */
+@import 'variables_and_mixins';
 
 /* Header */
 @media only screen and (max-width : 1200px) {
@@ -345,4 +320,10 @@ $blue: #00f;
         margin-top: 70px; 
     }
 
+}
+
+@media only screen and (max-width : 480px) {
+    .cookie-wrap {
+        width: 100%;
+    }
 }

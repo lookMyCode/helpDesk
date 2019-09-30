@@ -249,3 +249,8 @@
     margin-top: 70px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .cookie-wrap {
+    width: 100%;
+  }
+}

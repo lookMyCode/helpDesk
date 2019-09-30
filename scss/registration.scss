@@ -1,0 +1,102 @@
+/* SCSS */
+
+@import 'variables_and_mixins';
+
+main {
+    padding: 50px;
+    @include contentCenter;
+    flex-direction: column;
+
+    h1 {
+        font-size: 2em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .registr-form {
+        margin-top: 50px;
+        width: 600px;
+
+        .form-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+
+            span {
+                margin-right: 5px;
+            }
+
+            input {
+                padding: 12px 6px;
+                color: #747474;
+                border: 1px solid #ECECEC;
+                border-radius: 3px;
+                font-size: 0.9em;
+                background-color: #F6F7F8;
+                width: 70%;
+            }
+
+            input::placeholder {
+                color: #aaa;
+            }
+        }
+
+        p {
+            color: $green;
+            margin: 20px 0;
+        }
+
+        p.reg-warning {
+            color: red;
+        }
+    }
+}
+
+
+@media only screen and (max-width : 767px) {
+
+    main {
+    
+        .registr-form {
+            width: 100%;
+    
+            .form-row {
+                input {
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width : 575px) {
+
+    main {
+    
+        .registr-form {
+    
+            .form-row {
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 15px 0;
+    
+                input {
+                    margin-top: 5px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width : 480px) {
+
+    main {
+        padding: 20px;
+    }
+    
+}

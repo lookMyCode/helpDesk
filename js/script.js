@@ -20,6 +20,11 @@
 		$('#login-form-wrap').fadeOut(700);
 	});
 
+	// Link to registration
+	$('body').on('click', '.reg-btn', () => {
+		location.href = '/registration.html';
+	});
+
 	// Logout
 	$('header').on('click', '#logout-btn', () => {
 		$.ajax({
@@ -28,10 +33,39 @@
 			success: (answer) => {
 				const data = JSON.parse(answer);
 				if(data['status'] == 1) {
+					auth = false;
 					location.reload();
 				}
 			}
 		});
 	});
+
+	// Go to profile
+	$('header').on('click', '#profile-btn', () => {
+		location.href = '/profile.html';
+	});
+
+	// Visability button "Go to top"
+$('#go_top').fadeOut(400);
+
+$(window).scroll(() => {
+  if( $(window).scrollTop() > 100 ) {
+    $('#go_top').fadeIn(400);
+  } else {
+    $('#go_top').fadeOut(400);
+  }
+});
+
+// Animate link to top
+$('a').click(function() {
+  var elementClick = $(this).attr('href')
+  if(elementClick != '#') {
+    var destination = $(elementClick).offset().top;
+    jQuery('html:not(:animated),body:not(:animated)').animate({
+      scrollTop: destination
+    }, 500);
+    return false;
+  }
+});
 
 })();

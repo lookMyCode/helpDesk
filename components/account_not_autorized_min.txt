@@ -1,4 +1,4 @@
-<div class="acc-btn" title="Zarejestruj">
+<div class="acc-btn reg-btn" title="Zarejestruj">
     <i class="far fa-address-book"></i>
 </div>
 <div class="acc-btn login-btn" title="Załoguj">

@@ -1,0 +1,202 @@
+/* SCSS */
+/* Variables */
+/* End variables */
+/* Mixins */
+/* End mixins */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 15px 30px;
+  background-color: #F5F6F7; }
+  main article.profile-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    width: 100%;
+    max-width: 991px;
+    border: 2px solid #41F01D;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 25px;
+    color: #908A98; }
+    main article.profile-wrap h1, main article.profile-wrap h2, main article.profile-wrap h3, main article.profile-wrap h4, main article.profile-wrap h5, main article.profile-wrap h6 {
+      color: #292929;
+      margin-bottom: 10px; }
+    main article.profile-wrap .user-presentation {
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+      width: 100%;
+      padding: 10px; }
+      main article.profile-wrap .user-presentation img {
+        width: 100%;
+        margin-bottom: 15px; }
+      main article.profile-wrap .user-presentation .assessment {
+        margin-bottom: 10px; }
+        main article.profile-wrap .user-presentation .assessment i {
+          color: orange;
+          margin-right: 5px; }
+      main article.profile-wrap .user-presentation .get-assessment {
+        margin-bottom: 15px; }
+        main article.profile-wrap .user-presentation .get-assessment button {
+          border: 0;
+          background-color: #0CCEC0;
+          color: #fff;
+          padding: 2px 5px;
+          border-radius: 2px;
+          cursor: pointer;
+          transition: 0.2s; }
+          main article.profile-wrap .user-presentation .get-assessment button:hover {
+            background-color: #750fc2; }
+      main article.profile-wrap .user-presentation .hp-btn i {
+        margin-right: 10px;
+        font-size: 1.3em; }
+      main article.profile-wrap .user-presentation #sent_message {
+        margin-bottom: 20px; }
+    main article.profile-wrap .user-title {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      padding: 10px; }
+      main article.profile-wrap .user-title h1 {
+        font-size: 2em; }
+      main article.profile-wrap .user-title p {
+        margin-bottom: 5px; }
+        main article.profile-wrap .user-title p span:first-child {
+          margin-right: 5px; }
+    main article.profile-wrap .user-contact {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      padding: 10px; }
+      main article.profile-wrap .user-contact h2 {
+        font-size: 1.8em; }
+      main article.profile-wrap .user-contact p {
+        margin-bottom: 5px; }
+        main article.profile-wrap .user-contact p span:first-child {
+          margin-right: 5px; }
+        main article.profile-wrap .user-contact p a {
+          transition: 0.3s; }
+          main article.profile-wrap .user-contact p a:hover {
+            text-decoration: underline; }
+    main article.profile-wrap .user-about {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      padding: 10px; }
+    main article.profile-wrap .user-project-wrap {
+      margin-top: 25px !important; }
+    main article.profile-wrap .user-projects {
+      grid-column: 1 / 3;
+      grid-row: 5 / 6;
+      padding: 10px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto; }
+      main article.profile-wrap .user-projects h2 {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        text-align: center;
+        font-size: 1.8em; }
+      main article.profile-wrap .user-projects .published {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4; }
+      main article.profile-wrap .user-projects .taken {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4; }
+      main article.profile-wrap .user-projects .user-project-wrap {
+        margin: 0 10px; }
+        main article.profile-wrap .user-projects .user-project-wrap h3 {
+          font-size: 1.5em;
+          text-align: center;
+          margin-bottom: 30px; }
+        main article.profile-wrap .user-projects .user-project-wrap .user-project .user-ad {
+          margin-bottom: 30px;
+          cursor: pointer; }
+        main article.profile-wrap .user-projects .user-project-wrap .user-project h4 {
+          margin: 0;
+          font-size: 1.3em; }
+        main article.profile-wrap .user-projects .user-project-wrap .user-project p {
+          margin: 5px 0; }
+    main article.profile-wrap .review-wrap {
+      grid-row: 6 / 7;
+      grid-column: 1 / 3;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid #750fc2; }
+      main article.profile-wrap .review-wrap h2 {
+        text-align: center;
+        margin-bottom: 40px; }
+      main article.profile-wrap .review-wrap .review {
+        width: 100%;
+        padding: 20px 10px;
+        background-color: #F5F6F7;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #41f01d; }
+        main article.profile-wrap .review-wrap .review img {
+          width: 10%;
+          min-width: 50px;
+          float: left;
+          margin: 0 20px 20px 0; }
+        main article.profile-wrap .review-wrap .review h5 {
+          float: left;
+          font-size: 1.2em; }
+        main article.profile-wrap .review-wrap .review p {
+          margin-bottom: 15px; }
+        main article.profile-wrap .review-wrap .review div, main article.profile-wrap .review-wrap .review p {
+          clear: both;
+          width: 100%; }
+      main article.profile-wrap .review-wrap .review-form {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        main article.profile-wrap .review-wrap .review-form textarea {
+          width: 79%;
+          height: 100%;
+          border: 1px solid #41f01d;
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 0.9em; }
+        main article.profile-wrap .review-wrap .review-form #review-send {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 19%;
+          padding: 10px;
+          font-size: 1.1em;
+          border: 0;
+          background-color: #0CCEC0;
+          color: #fff;
+          border-radius: 3px;
+          transition: 0.3s; }
+          main article.profile-wrap .review-wrap .review-form #review-send:hover {
+            background-color: #750fc2; }
+
+@media only screen and (max-width: 767px) {
+  main article.profile-wrap .user-presentation {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3; }
+  main article.profile-wrap .user-title {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2; }
+  main article.profile-wrap .user-contact {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4; }
+  main article.profile-wrap .user-about {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5; }
+  main article.profile-wrap .user-projects h2 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2; }
+  main article.profile-wrap .user-projects .published {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3; }
+  main article.profile-wrap .user-projects .taken {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4; } }
+@media only screen and (max-width: 575px) {
+  main article.profile-wrap {
+    padding: 15px; } }
+@media only screen and (max-width: 480px) {
+  main {
+    padding: 15px; } }

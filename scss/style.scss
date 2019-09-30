@@ -1,39 +1,7 @@
 /* SCSS */
 
-/* Variables */
-$ff: 'Lato', sans-serif;
-$green: #41f01d;
-$blue: rgb(117,15,194);
-
-/* End variables */
-
-/* Mixins */
-@mixin blockSize($w, $h) {
-    width: $w;
-    height: $h;
-}
-
-@mixin position($p, $t, $l) {
-    position: $p;
-    top: $t;
-    left: $l;
-}
-
-@mixin contentCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* End mixins */
-
-/* Reset CSS */
-* {
-  padding: 0;
-  margin: 0;
-  outline: 0;
-  box-sizing: border-box;
-}
+@import "variables_and_mixins";
+@import "reset";
 
 /* Styles */
 body {
@@ -54,6 +22,22 @@ li > a {
     @include blockSize(100%, 100%);
     text-align: center;
     padding: 5px 10px;
+}
+
+.hp-btn {
+    @include blockSize(100%, 45px);
+    background-color: #0CCEC0;
+    transition: 0.2s;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 1.1em;
+    font-weight: bold;
+    @include contentCenter;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blue;
+    }
 }
 
 .logo {
@@ -438,6 +422,50 @@ footer {
     .footer-contact, .footer-copy {
         margin: 10px 10px;
         text-align: center;
+    }
+}
+
+
+
+.cookie-wrap {
+    background-color: #eee;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 480px;
+    padding: 30px;
+    border-radius: 5px;
+    display: none;
+
+    p {
+        color: #888;
+        margin-bottom: 25px;
+    }
+}
+
+#go_top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    background-color: #0CCEC0;
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: darken($green, 12%);
+    }
+    
+    a {
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        @include contentCenter;
     }
 }
 

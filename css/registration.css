@@ -1,0 +1,58 @@
+/* SCSS */
+/* Variables */
+/* End variables */
+/* Mixins */
+/* End mixins */
+main {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  main h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: bold; }
+  main .registr-form {
+    margin-top: 50px;
+    width: 600px; }
+    main .registr-form .form-row {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px 0; }
+      main .registr-form .form-row span {
+        margin-right: 5px; }
+      main .registr-form .form-row input {
+        padding: 12px 6px;
+        color: #747474;
+        border: 1px solid #ECECEC;
+        border-radius: 3px;
+        font-size: 0.9em;
+        background-color: #F6F7F8;
+        width: 70%; }
+      main .registr-form .form-row input::placeholder {
+        color: #aaa; }
+    main .registr-form p {
+      color: #41f01d;
+      margin: 20px 0; }
+    main .registr-form p.reg-warning {
+      color: red; }
+
+@media only screen and (max-width: 767px) {
+  main .registr-form {
+    width: 100%; }
+    main .registr-form .form-row input {
+      width: 60%; } }
+@media only screen and (max-width: 575px) {
+  main .registr-form .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0; }
+    main .registr-form .form-row input {
+      margin-top: 5px;
+      width: 100%; } }
+@media only screen and (max-width: 480px) {
+  main {
+    padding: 20px; } }

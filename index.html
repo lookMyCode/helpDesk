@@ -20,7 +20,7 @@
     </div>
   </div>
   
-  <header>
+  <header id="header">
     <nav class="nav-top"> <!-- Start menu -->
       
     </nav>
@@ -47,7 +47,7 @@
               <p>Dołączaj się do nas i naszy wołontariuszy pomogą Ci!</p>
               <p>To wszystko jest za darmo i zawsze tak będzie!</p>
             </div>
-            <div class="slide-content-btn">
+            <div class="slide-content-btn reg-btn">
               <span>Zarejestruj się</span>
             </div>
           </div>
@@ -61,7 +61,7 @@
               <p>Masz umiętności, ale chcech zdobyć praktykę na aktualnych dla rynku zadaniach!</p>
               <p>Dołączaj się do nas i złoż swoje portfolio albo znajdź swoją pracę!</p>
             </div>
-            <div class="slide-content-btn">
+            <div class="slide-content-btn reg-btn">
               <span>Zarejestruj się</span>
             </div>
           </div>
@@ -99,37 +99,6 @@
       <div id="slides_control"></div>
     </div> <!-- End slider -->
   </header>
-  <!--<div class="acc-modal-window-wrap" id="registration-form-wrap"> 
-    <div class="acc-modal-window" id="registration-form">
-      <div class="acc-modal-window-close-btn" id="reg-close-btn">
-          <i class="fas fa-times"></i>
-      </div>
-      <div class="form-content">
-        <h3>Rejestracja</h3>
-
-        <input type="email" placeholder="Email *" class="form-row">
-        <input type="password" placeholder="Hasło *" class="form-row">
-        <input type="password" placeholder="Podtwierdź hasło *" class="form-row">
-        <input type="text" placeholder="Imię lub nazwa firmy *" class="form-row">
-        <input type="text" placeholder="Rodzaj dziajalności *" class="form-row">
-        <div class="form-row">
-          <span>Kim jestesz *: </span>
-          <label>
-            <input type="radio" name="sex"><span>Ogłoszeniodawca</span>
-          </label>
-          <label>
-            <input type="radio" name="sex"><span>Wołontariusz</span>
-          </label>
-        </div>
-
-        <p>
-          Kontynując przyjmujesz <a href="#">przypisy</a> naszej strony
-        </p>
-
-        <div class="acc-modal-window-btn"><span>Zarejestruj się</span></div>
-      </div>
-    </div>
-  </div>-->
 
   <div class="acc-modal-window-wrap" id="login-form-wrap"> <!-- Start modal windows -->
     
@@ -241,11 +210,26 @@
     
   </footer>
 
+  <div id="go_top">
+    <a href="#header">
+      <i class="fas fa-angle-double-up"></i>
+    </a>
+  </div>
+
+  <div class="cookie-wrap">
+    
+  </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-cookie.js"></script>
+  <script src="js/variables.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/is_autorized.js"></script>
   <script src="js/before_load.js" ></script>
   <script src="js/script.js"></script>
   <script src="js/slider.js"></script>
   <script src="js/login.js"></script>
+  
 
 </body>
 </html>

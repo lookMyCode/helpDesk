@@ -1,4 +1,4 @@
-<div class="acc-btn">
+<div class="acc-btn reg-btn">
     <span>Zarejestruj</span>
 </div>
 <div class="acc-btn login-btn">
