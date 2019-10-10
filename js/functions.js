@@ -1,3 +1,19 @@
+function isAutorized() {
+  $.ajax({
+    type: "POST",
+    url: '/php/is_autorized.php',
+    success: (answer) => {
+      const data = JSON.parse(answer);
+      if(data['status'] == 1) {
+        window.auth = true;
+      } else {
+        window.auth = false;
+      }
+      return auth;
+    }
+  });
+}
+
 function sendLogin() {
   const login = $('#login_email').val();
   const pass = $('#login_pass').val();
@@ -26,8 +42,8 @@ function sendReg() {
   let 
     name        = $('#reg-name'),
     mail        = $('#reg-mail'),
-    pass1		= $('#pass1'),
-    pass2		= $('#pass2'),
+    pass1		    = $('#pass1'),
+    pass2		    = $('#pass2'),
     flag        = true;
 
   let 
@@ -141,4 +157,19 @@ function checkInput(input, text) {
     input.css('borderColor', 'red');
     flag = false;
   }
+}
+
+function getParams() {
+  // Check URL
+  let param = location.search;
+  param = param.slice(1);
+  let args = param.split('&');
+  let argState = {};
+  
+  args.map((item) => {
+    let arr = item.split('=');
+    argState[arr[0]]  = arr[1];
+  });
+
+  return argState;
 }

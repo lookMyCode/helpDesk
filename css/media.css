@@ -243,14 +243,35 @@
   main {
     margin-top: 80px;
   }
+
+  #go_top {
+    right: 25px;
+    bottom: 25px;
+    width: 40px;
+    height: 40px;
+  }
 }
 @media only screen and (max-width: 575px) {
   main {
     margin-top: 70px;
   }
+
+  #go_top {
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+  }
 }
 @media only screen and (max-width: 480px) {
   .cookie-wrap {
     width: 100%;
+  }
+
+  #go_top {
+    right: 10px;
+    bottom: 10px;
+    width: 35px;
+    height: 35px;
   }
 }

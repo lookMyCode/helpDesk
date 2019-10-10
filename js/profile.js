@@ -29,7 +29,9 @@
     loaderPage();
   } );
   
-  
+  $('.profile-wrap').on('click', '#edit_profile', () => {
+    location.href = '/edit_profile.html';
+  });
 
   function getId() {
     // Check URL
@@ -57,7 +59,6 @@
       },
       success: (answer) => {
         let data = JSON.parse(answer);
-        console.log(data);
     
         if(data['status'] == 1) {
           renderProfile(data);
@@ -78,10 +79,20 @@
     $(userPresentation).addClass('user-presentation');
 
     let imgPhoto = document.createElement('img');
-    $(imgPhoto).attr({
-      'src': '/img/face.jpg',
-      'alt': `${data.data.name} photo`
-    });
+    if(data.data.photo) {
+      $(imgPhoto).attr({
+        'src': data.data.photo,
+        'alt': `${data.data.name} photo`,
+        'title': data.data.name
+      });
+    } else {
+      $(imgPhoto).attr({
+        'src': '/img/default.jpg',
+        'alt': `${data.data.name} photo`,
+        'title': data.data.name
+      });
+    }
+    
     userPresentation.appendChild(imgPhoto);
 
     if(data.data.number_ratings != 0) {
@@ -99,7 +110,7 @@
       userPresentation.appendChild(assessment);
     }
 
-    if(!+data.owner && auth) {
+    if(!+data.owner && window.auth) {
       let getAssessment = document.createElement('p');
       $(getAssessment).addClass('get-assessment');
 
@@ -120,7 +131,7 @@
       userPresentation.appendChild(getAssessment);
     }
 
-    if(!+data.owner && auth) {
+    if(!+data.owner && window.auth) {
       let hpBtn = document.createElement('p');
       $(hpBtn).attr('id', 'sent_message').addClass('hp-btn');
 
@@ -138,6 +149,7 @@
     if(+data.owner) {
       let hpBtn = document.createElement('p');
       $(hpBtn).addClass('hp-btn');
+      $(hpBtn).attr('id', 'edit_profile');
 
       let hpBtnIcon = document.createElement('i');
       $(hpBtnIcon).addClass('fas fa-user-cog');

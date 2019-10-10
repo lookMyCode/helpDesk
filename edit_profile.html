@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/media.css">
+  <link rel="stylesheet" href="/css/edit_profile.css">
+</head>
+<body>
+
+  <div id="preloader-wrap">
+    <div id="preloader">
+      <h3>Help Place</h3>
+      <div class="preloader-block"></div>
+    </div>
+  </div>
+  
+  <header id="header">
+    <nav class="nav-top"> <!-- Start menu -->
+      
+    </nav>
+    <nav class="menu-min">
+      <ul>
+        
+      </ul>
+    </nav> <!-- End menu -->
+  </header>
+
+  <div class="acc-modal-window-wrap" id="login-form-wrap"> <!-- Start modal windows -->
+    
+  </div> <!-- End modal windows -->
+
+  <main>
+    
+    <h1>Edycja profilu</h1>
+
+    <section class="edit_photo">
+      <h2>Zmiana foto</h2>
+      <form enctype="multipart/form-data" action="" method="POST">
+        <label class="form-row">
+          <span>Obraz w rozszerzeniu jpg lub png, do 5 MB: </span>
+          <input type="file" accept=".jpg, .png" id="user_photo">
+        </label>
+        <p class="success"></p>
+        <p class="warning"></p>
+        <p class="hp-btn" id="submit_photo">
+          <span>Zmień foto</span>
+        </p>
+      </form>
+    </section>
+
+    <section class="edit_personal_data">
+      <h2>Zmiana personalnych danych</h2>
+      <label class="form-row">
+        <span>Specjalizacja: </span>
+        <input type="text" placeholder="Software House lub tłumacz" id="specialization">
+      </label>
+      <label class="form-row">
+        <span>Lokalizacja: </span>
+        <input type="text" placeholder="Warszawa, Mazowieckie W-wo" id="location">
+      </label>
+
+      <h3>Kontakt</h3>
+      <label class="form-row">
+        <span>Numer telefonu: </span>
+        <input type="tel" placeholder="+48 123 123 123" id="tel">
+      </label>
+      <label class="form-row">
+        <span>Mail: </span>
+        <input type="text" placeholder="kowalski@przykład.pl" id="mail">
+      </label>
+      <label class="form-row">
+        <span>Skype: </span>
+        <input type="text" placeholder="kowalski007" id="skype">
+      </label>
+      <label class="form-row">
+        <span>Strona internetowa: </span>
+        <input type="text" placeholder="http://twojastrona.pl" id="website">
+      </label>
+
+      <h3>O mnie</h3>
+      <textarea id="about"></textarea>
+
+      <p class="success"></p>
+      <p class="warning"></p>
+
+      <p class="hp-btn" id="change_personal_data">
+        <span>Zmień dane</span>
+      </p>
+
+      <h2>Zmiana hasła</h2>
+      <label class="form-row">
+        <span>Hasło: </span>
+        <input type="password" placeholder="TrudneHaslo1@" id="pass1">
+      </label>
+      <label class="form-row">
+        <span>Nowe hasło: </span>
+        <input type="password" placeholder="NoweTrudneHaslo1@" id="pass2">
+      </label>
+      <label class="form-row">
+        <span>Powtórz hasło: </span>
+        <input type="password" placeholder="NoweTrudneHaslo1@" id="pass3">
+      </label>
+      <p class="pass_success"></p>
+      <p class="pass_warning"></p>
+      <p class="hp-btn" id="change_pass">
+        <span>Zmień hasło</span>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    
+  </footer>
+  
+  <div id="go_top">
+    <a href="#header">
+      <i class="fas fa-angle-double-up"></i>
+    </a>
+  </div>
+
+  <div class="cookie-wrap"></div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-cookie.js"></script>
+  <script src="js/variables.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/is_autorized.js"></script>
+  <script src="js/before_load.js" ></script>
+  <script src="js/script.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/edit_profile.js"></script>
+  
+
+</body>
+</html>

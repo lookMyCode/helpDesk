@@ -4,26 +4,7 @@
 
   session_start();
 
-  if( isset($_SESSION['id_user']) && $_SESSION['id_user'] == $id_user ) {
-    $response = [
-      'status' => '1',
-      'owner' => '1',
-      'data' => [
-        'mail' => $_SESSION['mail'],
-        'name' => $_SESSION['name'],
-        'specialization' => $_SESSION['specialization'],
-        'location' => $_SESSION['location'],
-        'date_registration' => $_SESSION['date_registration'],
-        'tel' => $_SESSION['tel'],
-        'public_mail' => $_SESSION['public_mail'],
-        'skype' => $_SESSION['skype'],
-        'website' => $_SESSION['website'],
-        'about' => $_SESSION['about'],
-        'average_rating' => $_SESSION['average_rating'],
-        'number_ratings' => $_SESSION['number_ratings']
-      ]
-    ];
-  } else if($id_user > 0) {
+  if($id_user > 0) {
 
     require_once 'db_connect.php';
 
@@ -49,7 +30,8 @@
             'website' => $result[0]['website'],
             'about' => $result[0]['about'],
             'average_rating' => $result[0]['average_rating'],
-            'number_ratings' => $result[0]['number_ratings']
+            'number_ratings' => $result[0]['number_ratings'],
+            'photo' => $result[0]['photo']
           ]
         ];
 
@@ -63,7 +45,7 @@
         'status' => '0'
       ];
     }
-
+    require_once 'db_close_connect.php';
   } else {
     $response = [
       'status' => '0'

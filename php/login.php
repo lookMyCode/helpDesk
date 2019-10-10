@@ -32,6 +32,7 @@ if($connect) {
 			$_SESSION['about'] = $result[0]['about'];
 			$_SESSION['average_rating'] = $result[0]['average_rating'];
 			$_SESSION['number_ratings'] = $result[0]['number_ratings'];
+			$_SESSION['user_photo'] = $result[0]['user_photo'];
 
 			$response = [
 				'status' => '1'
