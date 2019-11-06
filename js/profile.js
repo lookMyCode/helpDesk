@@ -61,6 +61,7 @@
         let data = JSON.parse(answer);
     
         if(data['status'] == 1) {
+          
           renderProfile(data);
         } else {
           location.href = `${location.origin}${location.pathname}`;
@@ -71,7 +72,6 @@
 
   function renderProfile(data) {
     let profileWrap = document.querySelector('.profile-wrap');
-
     $(profileWrap).html('');
 
     // User presentation

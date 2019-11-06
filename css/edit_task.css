@@ -1,0 +1,113 @@
+/* SCSS */
+/* Variables */
+/* End variables */
+/* Mixins */
+/* End mixins */
+main {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  main h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: bold; }
+  main h2 {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 2em 0 1em 0;
+    text-align: center; }
+  main section {
+    margin-top: 50px;
+    width: 600px; }
+  main .form-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0; }
+    main .form-row span {
+      margin-right: 5px; }
+    main .form-row input {
+      padding: 12px 6px;
+      color: #747474;
+      border: 1px solid #ECECEC;
+      border-radius: 3px;
+      font-size: 0.9em;
+      background-color: #F6F7F8;
+      width: 70%; }
+    main .form-row input::placeholder {
+      color: #aaa; }
+  main textarea {
+    width: 70%;
+    height: 250px;
+    margin: 5px 0;
+    padding: 12px 6px;
+    color: #747474;
+    border: 1px solid #ECECEC;
+    border-radius: 3px;
+    font-size: 0.9em;
+    background-color: #F6F7F8; }
+    main textarea::placeholder {
+      color: #aaa; }
+  main p {
+    color: #41f01d;
+    margin: 20px 0; }
+  main p.warning, main .pass_warning {
+    color: red; }
+  main .images {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    main .images .img_wrap {
+      width: 100%;
+      margin: 10px;
+      position: relative; }
+      main .images .img_wrap img {
+        width: 100%; }
+      main .images .img_wrap .remove_img {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        width: 25px;
+        height: 25px;
+        background-color: #fff;
+        border: 1px solid #41f01d;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        color: #41f01d;
+        cursor: pointer;
+        transition: 0.2s; }
+        main .images .img_wrap .remove_img:hover {
+          color: red;
+          border-color: red; }
+
+@media only screen and (max-width: 767px) {
+  main section {
+    width: 100%; }
+    main section .form-row input {
+      width: 60%; }
+    main section .form-row textarea {
+      width: 60%; } }
+@media only screen and (max-width: 575px) {
+  main section .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0; }
+    main section .form-row input {
+      margin-top: 5px;
+      width: 100%; }
+    main section .form-row textarea {
+      margin-top: 5px;
+      width: 100%; }
+  main section textarea {
+    height: 200px; } }
+@media only screen and (max-width: 480px) {
+  main {
+    padding: 20px; } }
