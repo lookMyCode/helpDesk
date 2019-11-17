@@ -110,4 +110,6 @@ main {
     height: 200px; } }
 @media only screen and (max-width: 480px) {
   main {
-    padding: 20px; } }
+    padding: 20px; }
+    main h1 {
+      text-align: center; } }

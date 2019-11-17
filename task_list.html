@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/media.css">
+  <link rel="stylesheet" href="/css/task_list.css">
+</head>
+<body>
+
+  <div id="preloader-wrap">
+    <div id="preloader">
+      <h3>Help Place</h3>
+      <div class="preloader-block"></div>
+    </div>
+  </div>
+  
+  <header id="header">
+    <nav class="nav-top"> <!-- Start menu -->
+      
+    </nav>
+    <nav class="menu-min">
+      <ul>
+        
+      </ul>
+    </nav> <!-- End menu -->
+  </header>
+
+  <div class="acc-modal-window-wrap" id="login-form-wrap"> <!-- Start modal windows -->
+    
+  </div> <!-- End modal windows -->
+
+  <main>
+    <article id="task_list">
+      <h1>Zadania</h1>
+      <aside id="filter">
+        <p class="hp-btn" id="create_task_btn">
+          <span>Stwórz zadanie</span>
+        </p>
+        <h2>Filtruj</h2>
+        <div class="filter_param">
+          <h6>Pokazać:</h6>
+          <label>
+            <input type="radio" name="role" value="all" class="filter_inputs filter_role">
+            <span></span>
+            Wszystkie
+          </label>
+          <label>
+            <input type="radio" name="role" value="my" class="filter_inputs filter_role">
+            <span></span>
+            Moje zadania
+          </label>
+          <label>
+            <input type="radio" name="role" value="me" class="filter_inputs filter_role">
+            <span></span>
+            Realizowane przez mnie
+          </label>
+        </div>
+        <div class="filter_param">
+          <h6>Status zadania:</h6>
+          <label>
+            <input type="radio" name="status" value="all" class="filter_inputs filter_status">
+            <span></span>
+            Wszystkie
+          </label>
+          <label>
+            <input type="radio" name="status" value="active" class="filter_inputs filter_status">
+            <span></span>
+            Aktywne
+          </label>
+          <label>
+            <input type="radio" name="status" value="process" class="filter_inputs filter_status">
+            <span></span>
+            W trakcie realizacji
+          </label>
+          <label>
+            <input type="radio" name="status" value="finished" class="filter_inputs filter_status">
+            <span></span>
+            Skończone
+          </label>
+          <label>
+            <input type="radio" name="status" value="archive" class="filter_inputs filter_status">
+            <span></span>
+            Archiwium
+          </label>
+        </div>
+        <div class="filter_param">
+          <h6>Sortuj:</h6>
+          <label>
+            <input type="radio" name="sort" value="new" class="filter_inputs filter_sort">
+            <span></span>
+            Najpierw najnowsze
+          </label>
+          <label>
+            <input type="radio" name="sort" value="old" class="filter_inputs filter_sort">
+            <span></span>
+            Najpierw najstarsze
+          </label>
+          <label>
+            <input type="radio" name="sort" value="rating" class="filter_inputs filter_sort">
+            <span></span>
+            Wędług retingu autora
+          </label>
+          <label>
+            <input type="radio" name="sort" value="more" class="filter_inputs filter_sort">
+            <span></span>
+            Wędług propozycyj realizacji <br> (najpierw najmniejsze propozycyj)
+          </label>
+          <label>
+            <input type="radio" name="sort" value="less" class="filter_inputs filter_sort">
+            <span></span>
+            Wędług propozycyj realizacji <br> (najpierw najwięcej propozycyj)
+          </label>
+        </div>
+
+        <p class="hp-btn" id="filter_toggle"><span>Rozwiń</span></p>
+      </aside>
+      <section id="tasks">
+        
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    
+  </footer>
+  
+  <div id="go_top">
+    <a href="#header">
+      <i class="fas fa-angle-double-up"></i>
+    </a>
+  </div>
+
+  <div class="cookie-wrap"></div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-cookie.js"></script>
+  <script src="js/variables.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/is_autorized.js"></script>
+  <script src="js/before_load.js" ></script>
+  <script src="js/script.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/task_list.js"></script>
+  
+
+</body>
+</html>

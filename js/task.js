@@ -11,7 +11,6 @@
     success: (answer) => {
       let data = JSON.parse(answer);
       
-      console.log(data);
       if(data.status == '1') {
         renderTask(data.data, data.owner);
       } else {
@@ -19,6 +18,37 @@
       }
       
     }
+  });
+
+  $('.task_wrap').on('click', '#edit_task_btn', () => {
+    location.href = `/edit_task.html?id=${id}`;
+  });
+
+  $('.task_wrap').on('click', '#change_date_completion', () => {
+    $.ajax({
+      type: "POST",
+      url: '/php/change_date_completion.php',
+      data: {
+        'id': id
+      },
+      success: (answer) => {
+        let data = JSON.parse(answer);
+        
+        if(data.status == '1') {
+          $('.short_time').html('Zadanie zostało przedłużone na 14 dni').css({
+            'color': 'green'
+          });
+          $('#change_date_completion').hide();
+          setTimeout(() => {
+            $('.short_time').hide();
+          }, 60000);
+        } else {
+          $('.short_time').html('Błąd serwera').css({
+            'color': 'red'
+          });
+        }
+      }
+    });
   });
 
   function renderTask(data, owner) {
@@ -57,7 +87,9 @@
 
     if(owner == '1') {
       let taskAutorEditBtn = document.createElement('div');
-      $(taskAutorEditBtn).addClass('hp-btn').html('<span>Edytuj zadanie</span>');
+      $(taskAutorEditBtn).addClass('hp-btn').html('<span>Edytuj zadanie</span>').attr({
+        'id': 'edit_task_btn'
+      });
       taskAutor.appendChild(taskAutorEditBtn);
     }
 
@@ -73,12 +105,16 @@
 
     if(data.date_completion != undefined && data.date_completion.days < 7) {
       let taskDateCompletion = document.createElement('p');
-      $(taskDateCompletion).html(`Wygaśnie za: ${data.date_completion.days} dni ${data.date_completion.hours} godzin ${data.date_completion.minutes} minut`)
+      $(taskDateCompletion).html(`Wygaśnie za: ${data.date_completion.days} dni ${data.date_completion.hours} godzin ${data.date_completion.minutes} minut`).addClass('short_time');
       taskDate.appendChild(taskDateCompletion);
 
-      let taskDateBtn = document.createElement('div');
-      $(taskDateBtn).addClass('hp-btn').html('<span>Przedłuż</span>');
-      taskDate.appendChild(taskDateBtn);
+      if(owner == '1') {
+        let taskDateBtn = document.createElement('div');
+        $(taskDateBtn).addClass('hp-btn').html('<span>Przedłuż</span>').attr({
+          'id': 'change_date_completion'
+        });
+        taskDate.appendChild(taskDateBtn);
+      }
     }
 
     taskWrap.appendChild(taskDate);
