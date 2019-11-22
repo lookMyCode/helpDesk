@@ -97,6 +97,10 @@ li > a {
     }
 }
 
+#top {
+    @include position(absolute, 0, 0);
+}
+
 /* Header */
 header {
     @include blockSize(100%, auto);

@@ -117,6 +117,12 @@ li > a {
   animation: loader 2s infinite ease-in-out;
 }
 
+#top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /* Header */
 header {
   width: 100%;

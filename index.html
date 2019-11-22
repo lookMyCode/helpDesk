@@ -100,6 +100,8 @@
     </div> <!-- End slider -->
   </header>
 
+  <div id="top"></div>
+
   <div class="acc-modal-window-wrap" id="login-form-wrap"> <!-- Start modal windows -->
     
   </div> <!-- End modal windows -->
@@ -189,18 +191,21 @@
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga magnam a ducimus exercitationem quidem odio autem suscipit aperiam in iusto necessitatibus voluptatem, aliquid soluta dolores temporibus vero dolorem ad alias.</p>
         </div>
       </div>
+      <p class="hp-btn" id="go_to_tasks">
+        <span>Zobacz wszystkie</span>
+      </p>
     </aside>
     <section id="statistic_counters">
       <div class="stat_counter">
-        <span class="stat_num">96</span>
+        <span class="stat_num" id="count_users"></span>
         <span class="stat_description">Założonych kont</span>
       </div>
       <div class="stat_counter">
-        <span class="stat_num">722</span>
+        <span class="stat_num" id="entrances"></span>
         <span class="stat_description">Wejść na stronę</span>
       </div>
       <div class="stat_counter">
-        <span class="stat_num">161</span>
+        <span class="stat_num" id="count_tasks"></span>
         <span class="stat_description">Ogłoszeń</span>
       </div>
     </section>
@@ -211,7 +216,7 @@
   </footer>
 
   <div id="go_top">
-    <a href="#header">
+    <a href="#top">
       <i class="fas fa-angle-double-up"></i>
     </a>
   </div>
@@ -229,6 +234,7 @@
   <script src="js/script.js"></script>
   <script src="js/slider.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/index.js"></script>
   
 
 </body>

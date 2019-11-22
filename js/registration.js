@@ -9,3 +9,11 @@
 	});
 
 })();
+
+$(window).on('load', () => {
+	grecaptcha.execute();
+});
+
+function afterValidCaptcha(token) {
+	null;
+}

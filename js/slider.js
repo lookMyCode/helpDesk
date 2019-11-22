@@ -1,6 +1,6 @@
 ;(function() {
 
-  const slideTimer = 6000; // Slider's interval
+  const slideTimer = 12000; // Slider's interval
 
   const slides = $('.slide');
 

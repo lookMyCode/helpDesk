@@ -3,14 +3,6 @@
     $('.nav-top').load('/components/nav-top.txt', () => {
 		$('.menu').load('/components/menu.txt');
 		$('.menu-min>ul').load('/components/menu.txt');
-		
-		/*if( window.auth || isAutorized() ) {
-			$('.account').load('/components/account_autorized.txt');
-			$('.account-min').load('/components/account_autorized.txt');
-		} else {
-			$('.account').load('/components/account_not_autorized.txt');
-			$('.account-min').load('/components/account_not_autorized_min.txt');
-		}*/
 
 		( () => {
 			return new Promise( (res, rej) => {
@@ -55,6 +47,25 @@
 				});
 				$('.cookie-wrap').fadeOut();
 			});
+		});
+	}
+
+	if( !$.cookie('visited_today') ) {
+		$.ajax({
+			type: "POST",
+			url: '/php/visited_today.php',
+			success: (answer) => {
+				let data = JSON.parse(answer);
+
+				if(data.status == 1) {
+					$.cookie('visited_today', 'true', {
+						expires: 0.25,
+						path: '/'
+					});
+				}
+
+				$('entrances').html(data.data.count);
+			}
 		});
 	}
 

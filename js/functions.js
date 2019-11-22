@@ -38,13 +38,16 @@ function sendLogin() {
   });
 }
 
-function sendReg() {
+function sendReg(e) {
+  e.preventDefault();
   let 
     name        = $('#reg-name'),
     mail        = $('#reg-mail'),
     pass1		    = $('#pass1'),
     pass2		    = $('#pass2'),
     flag        = true;
+
+  let $form = $('#registr-form');
 
   let 
     nameVal = validateName( name.val() ),
@@ -66,7 +69,7 @@ function sendReg() {
     if(nameVal && mailVal && pass1Val && pass2Val && flag && pass1Val === pass2Val) {
       $('.reg-warning').html('');
 
-      let data = {
+      /*let data = {
         'name': nameVal,
         'mail': mailVal,
         'pass1': pass1Val,
@@ -90,6 +93,34 @@ function sendReg() {
         },
         error: (error) => {
           $('.reg-warning').html('Błąd serwera');
+        }
+      });*/
+
+      $.ajax({
+        'url': $form.attr('action'),
+        'data': $form.serialize(),
+        'method': $form.attr('method'),
+        success: (answer) => {
+          console.log(answer);
+          const data = JSON.parse(answer);
+
+          if( data['status'] == 1 ) {
+            location.href = '/';
+          } else if( data['status'] == 2 ) {
+            $('.reg-warning').html('Wpisz poprawne dane');
+            grecaptcha.execute();
+          } else if( data['status'] == 4 ) {
+            $('.reg-warning').html('Nie przeszedłesz sprawdzenia na bota, sprobuj ponownie');
+            grecaptcha.execute();
+          } else {
+            $('.reg-warning').html('Błąd serwera');
+            grecaptcha.execute();
+          }
+          $('.reg-warning').html(data['data']);
+        },
+        error: (err) => {
+          $('.reg-warning').html('Błąd serwera');
+          grecaptcha.execute();
         }
       });
     } else {
@@ -127,7 +158,7 @@ function validateName(name) {
 function validateMail(mail) {
   mail = mail.trim();
 
-  let regExp = /^[a-z0-9_-]{2,16}@[0-9a-z_-]+\.[a-z]{2,5}$/i;
+  let regExp = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
   if ( toValidateValue(regExp, mail) ) {
     return mail;
   } else {

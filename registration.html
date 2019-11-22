@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/media.css">
   <link rel="stylesheet" href="/css/registration.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -19,6 +20,8 @@
       <div class="preloader-block"></div>
     </div>
   </div>
+
+  <div id="top"></div>
   
   <header id="header">
     <nav class="nav-top"> <!-- Start menu -->
@@ -39,24 +42,30 @@
     
     <h1>Rejestracja</h1>
 
-    <section class="registr-form">
+    <form action="/php/registration.php" method="POST" class="registr-form" id="registr-form">
 
       <label class="form-row">
         <span>Email: </span>
-        <input type="email" placeholder="kowalski@przyklad.pl" id="reg-mail">
+        <input type="email" placeholder="kowalski@przyklad.pl" id="reg-mail" name="mail">
       </label>
       <label class="form-row">
         <span>Hasło: </span>
-        <input type="password" placeholder="TrudneHaslo1@" id="pass1">
+        <input type="password" placeholder="TrudneHaslo1@" id="pass1" name="pass1">
       </label>
       <label class="form-row">
         <span>Powtórz hasło: </span>
-        <input type="password" placeholder="TrudneHaslo1@" id="pass2">
+        <input type="password" placeholder="TrudneHaslo1@" id="pass2" name="pass2">
       </label>
       <label class="form-row">
         <span>Imię lub nazwa firmy: </span>
-        <input type="text" placeholder="Jan Kowalski lub Help-Place" id="reg-name">
+        <input type="text" placeholder="Jan Kowalski lub Help-Place" id="reg-name" name="name">
       </label>
+
+      <div class="g-recaptcha"
+        data-sitekey="6LcQJcQUAAAAAFMU-uxQr7EV24DDO7q5mahzNYET"
+        data-callback="afterValidCaptcha"
+        data-size="invisible">
+      </div>
 
       <p>
         Kontynując przyjmujesz <a href="#">przypisy</a> naszej strony
@@ -64,9 +73,9 @@
 
       <p class="reg-warning"></p>
 
-      <div class="hp-btn" id="registr-btn"><span>Zarejestruj się</span></div>
+      <button class="hp-btn" id="registr-btn"><span>Zarejestruj się</span></button>
 
-    </section>
+    </form>
 
   </main>
 
@@ -75,7 +84,7 @@
   </footer>
 
   <div id="go_top">
-    <a href="#header">
+    <a href="#top">
       <i class="fas fa-angle-double-up"></i>
     </a>
   </div>
