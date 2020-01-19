@@ -45,6 +45,8 @@
         if(mb_strlen($data['tasks'][$i]['text']) > 300) {
           $data['tasks'][$i]['text'] = substr($data['tasks'][$i]['text'], 0, 300) . '...';
         }
+
+        $data['tasks'][$i]['average_rating'] = round($data['tasks'][$i]['average_rating'], 1);
       }
 
       $response = [

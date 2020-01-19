@@ -181,6 +181,9 @@
   .acc-modal-window-wrap .acc-modal-window {
     padding: 15px;
   }
+  .acc-modal-window-wrap .acc-modal-window .form-content {
+    width: 430px;
+  }
   .acc-modal-window-wrap .acc-modal-window .form-content h3 {
     font-size: 1em;
     margin-bottom: 12px;
@@ -217,6 +220,9 @@
   }
 
   /* Modal windows */
+  .acc-modal-window-wrap .acc-modal-window .form-content {
+    width: 265px;
+  }
   .acc-modal-window-wrap .acc-modal-window .form-content h3 {
     font-size: 1.2em;
   }

@@ -30,6 +30,7 @@
   } );
 
   $('#submit_photo').on('click', () => {
+    $('.edit_photo .mini_preloader_wrap').css('opacity', '1');
     let file_data = $('#user_photo').prop('files')[0];   
     let form_data = new FormData();                  
     form_data.append('file', file_data);
@@ -51,11 +52,13 @@
           $('.edit_photo .success').html('');
           $('.edit_photo .warning').html('Błąd: Foto nie zostało wysłane');
         }
+        $('.edit_photo .mini_preloader_wrap').css('opacity', '0');
       }
    });
   });
 
   $('#change_personal_data').on('click', () => {
+    $('.edit_personal_data .mini_preloader_wrap').eq(0).css('opacity', '1');
     let personalData = {
       'specialization': $('#specialization').val(),
       'location': $('#location').val(),
@@ -80,11 +83,15 @@
           $('.edit_personal_data .success').html('');
           $('.edit_personal_data .warning').html('Błąd serwera');
         }
+
+        $('.edit_personal_data .mini_preloader_wrap').eq(0).css('opacity', '0');
       }
    });
   });
 
   $('#change_pass').on('click', () => {
+    $('.edit_personal_data .mini_preloader_wrap').eq(1).css('opacity', '1');
+
     let
       pass1 = $('#pass1'),
       pass2 = $('#pass2'),
@@ -126,16 +133,58 @@
               $('.pass_success').html('');
               $('.pass_warning').html('Błąd serwera');
             }
+
+            $('.edit_personal_data .mini_preloader_wrap').eq(1).css('opacity', '0');
           },
           error: (error) => {
             $('.pass_success').html('');
             $('.pass_warning').html('Błąd serwera');
+
+            $('.edit_personal_data .mini_preloader_wrap').eq(1).css('opacity', '0');
           }
         });
       } else {
-        $('pass_success').html('');
-        $('pass_warning').html('Wpisz poprawne dane!');
+        $('.pass_warning').html('Wpisz poprawne dane!');
+
+        $('.edit_personal_data .mini_preloader_wrap').eq(1).css('opacity', '0');
       }
   });
+
+  $('#remove_profile_btn').on('click', () => {
+    if( !confirm('Usunięcie jest bezpowrotne, one usunie wszystkie twoje dane. Czy napewno chcesz usunąć profil?') ) {
+      return false;
+    };
+    $('.remove_profile .mini_preloader_wrap').css('opacity', '1');
+
+    if( $(pass_remove).val().length != 0 ) {
+      $.ajax({
+        type: 'POST',
+        url: "/php/remove_profile.php",
+        data: {
+          'pass': $(pass_remove).val()
+        },
+        success: (answer) => {
+          $('.remove_profile .mini_preloader_wrap').css('opacity', '0');
+          let data = JSON.parse(answer);
+
+          if( data.status == 1 ) {
+            location.href = '/';
+          } else if(data.status == 2) {
+          $('.remove_warning').html('Wpisz poprawne hasło');
+          } else {
+            $('.remove_warning').html('Błąd serwera');
+          }
+        },
+        error: (error) => {
+          $('.remove_profile .mini_preloader_wrap').css('opacity', '0');
+          $('.remove_warning').html('Błąd serwera');
+        }
+      });
+    } else {
+      $('.remove_success').html('');
+      $('.remove_warning').html('Wpisz hasło');
+      $('.remove_profile .mini_preloader_wrap').css('opacity', '0');
+    }
+  })
 
 } )();

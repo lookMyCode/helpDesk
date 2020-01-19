@@ -29,7 +29,17 @@ main {
       padding: 25px; }
       main #profile_list #filter h2 {
         font-size: 1.8em;
-        margin-bottom: 30px; }
+        margin-bottom: 30px;
+        text-align: center; }
+      main #profile_list #filter .filter_param {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0; }
+        main #profile_list #filter .filter_param h6 {
+          font-size: 1.2em;
+          margin-bottom: 10px; }
+      main #profile_list #filter #filter_toggle {
+        display: none; }
       main #profile_list #filter label {
         display: inline-flex;
         align-items: center;
@@ -115,6 +125,11 @@ main {
       font-size: 1.7em;
       margin-bottom: 25px;
       width: 100%; }
+    main #profile_list #filter .filter_param {
+      display: none;
+      flex-direction: column; }
+    main #profile_list #filter #filter_toggle {
+      display: flex; }
   main #profile_list #profiles {
     grid-row: 3 / 4;
     grid-column: 1 / 3; } }

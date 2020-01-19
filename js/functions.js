@@ -15,6 +15,8 @@ function isAutorized() {
 }
 
 function sendLogin() {
+  $('#login-form .mini_preloader_wrap').css('opacity', '1');
+
   const login = $('#login_email').val();
   const pass = $('#login_pass').val();
 
@@ -26,10 +28,13 @@ function sendLogin() {
       'pass': pass
     },
     success: (answer) => {
+      $('#login-form .mini_preloader_wrap').css('opacity', '0');
+
       const data = JSON.parse(answer);
       if(data['status'] == 2) {
         $('#login_answer').html('Nieprawidłowy login lub hasło');
       } else if(data['status'] == 1) {
+        $('#login_answer').html('');
         location.reload();
       } else {
         $('#login_answer').html('Błąd serwera');
@@ -40,6 +45,8 @@ function sendLogin() {
 
 function sendReg(e) {
   e.preventDefault();
+  $('.mini_preloader_wrap').css('opacity', '1');
+
   let 
     name        = $('#reg-name'),
     mail        = $('#reg-mail'),
@@ -69,38 +76,12 @@ function sendReg(e) {
     if(nameVal && mailVal && pass1Val && pass2Val && flag && pass1Val === pass2Val) {
       $('.reg-warning').html('');
 
-      /*let data = {
-        'name': nameVal,
-        'mail': mailVal,
-        'pass1': pass1Val,
-        'pass2': pass2Val
-      };
-      
-      $.ajax({
-        type: "POST",
-        url: "/php/registration.php",
-        data: data,
-        success: (answer) => {
-          const data = JSON.parse(answer);
-          if( data['status'] == 1 ) {
-            location.href = '/';
-          } else if( data['status'] == 2 ) {
-            $('.reg-warning').html('Wpisz poprawne dane');
-          } else {
-            $('.reg-warning').html('Błąd serwera');
-          }
-          $('.reg-warning').html(data['data']);
-        },
-        error: (error) => {
-          $('.reg-warning').html('Błąd serwera');
-        }
-      });*/
-
       $.ajax({
         'url': $form.attr('action'),
         'data': $form.serialize(),
         'method': $form.attr('method'),
         success: (answer) => {
+          $('.mini_preloader_wrap').css('opacity', '0');
           console.log(answer);
           const data = JSON.parse(answer);
 
@@ -109,6 +90,8 @@ function sendReg(e) {
           } else if( data['status'] == 2 ) {
             $('.reg-warning').html('Wpisz poprawne dane');
             grecaptcha.execute();
+          } else if(data['status'] == 3) {
+            $('.reg-warning').html('Podany mail już istnieje');
           } else if( data['status'] == 4 ) {
             $('.reg-warning').html('Nie przeszedłesz sprawdzenia na bota, sprobuj ponownie');
             grecaptcha.execute();
@@ -119,12 +102,14 @@ function sendReg(e) {
           $('.reg-warning').html(data['data']);
         },
         error: (err) => {
+          $('.mini_preloader_wrap').css('opacity', '0');
           $('.reg-warning').html('Błąd serwera');
           grecaptcha.execute();
         }
       });
     } else {
       $('.reg-warning').html('Wpisz poprawne dane');
+      $('.mini_preloader_wrap').css('opacity', '0');
     }
 
 }

@@ -9,6 +9,18 @@
     <input type="password" placeholder="Hasło" class="form-row" id="login_pass">
 
     <p id="login_answer"></p>
+
+    <a href="/restore_password.html" class="restore_password">Zapomniałem hasło</a>
+
+    <div class="mini_preloader_wrap">
+        <div class="mini_preloader">
+            <div class="mini_preloader_item"></div>
+            <div class="mini_preloader_item"></div>
+            <div class="mini_preloader_item"></div>
+            <div class="mini_preloader_item"></div>
+            <div class="mini_preloader_item"></div>
+        </div>
+    </div>
         
     <div class="acc-modal-window-btn" id="login_btn"><span>Załoguj się</span></div>
     </div>

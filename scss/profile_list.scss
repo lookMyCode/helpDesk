@@ -33,6 +33,22 @@ main {
       h2 {
         font-size: 1.8em;
         margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .filter_param {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+
+        h6 {
+          font-size: 1.2em;
+          margin-bottom: 10px;
+        }
+      }
+
+      #filter_toggle {
+        display: none;
       }
 
       label {
@@ -167,6 +183,16 @@ main {
           margin-bottom: 25px;
           width: 100%;
         }  
+
+        .filter_param {
+          display: none;
+
+          flex-direction: column;
+        }
+
+        #filter_toggle {
+          display: flex;
+        }
       }
   
       #profiles {

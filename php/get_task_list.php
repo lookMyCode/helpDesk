@@ -98,6 +98,8 @@ if( isset($_GET['role']) ) {
             if(mb_strlen($result[$i]['text']) > 300) {
               $result[$i]['text'] = substr($result[$i]['text'], 0, 300) . '...';
             }
+
+            $result[$i]['average_rating'] = round($result[$i]['average_rating'], 1);
           }
 
           $response = [

@@ -42,9 +42,21 @@
       <h1>Profili</h1>
       <section id="filter">
         <h2>Filtruj</h2>
-        <label><input type="radio" name="role" value="all" class="filter_inputs filter_role" checked><span></span> Wszyscy</label>
-        <label><input type="radio" name="role" value="giver" class="filter_inputs filter_role"><span></span> Zadaniodawcy</label>
-        <label><input type="radio" name="role" value="making" class="filter_inputs filter_role"><span></span> Volontariuszy</label>
+
+        <div class="filter_param">
+          <h6>Pokazać:</h6>
+          <label><input type="radio" name="role" value="all" class="filter_inputs filter_role" checked><span></span> Wszyscy</label>
+          <label><input type="radio" name="role" value="giver" class="filter_inputs filter_role"><span></span> Zadaniodawcy</label>
+          <label><input type="radio" name="role" value="making" class="filter_inputs filter_role"><span></span> Volontariuszy</label>
+        </div>  
+        <div class="filter_param">
+          <h6>Sortuj:</h6>
+          <label><input type="radio" name="sort" value="new" class="filter_inputs filter_sort" checked><span></span> Najpierw nowe</label>
+          <label><input type="radio" name="sort" value="old" class="filter_inputs filter_sort"><span></span> Najpierw starsze</label>
+          <label><input type="radio" name="sort" value="rating" class="filter_inputs filter_sort"><span></span> Wędług retingu</label>
+        </div> 
+
+        <p class="hp-btn" id="filter_toggle"><span>Rozwiń</span></p>
       </section>
       <section id="profiles">
         

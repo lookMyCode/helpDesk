@@ -57,7 +57,7 @@ main {
   main p {
     color: #41f01d;
     margin: 20px 0; }
-  main p.warning, main .pass_warning {
+  main p.warning, main .pass_warning, main .remove_warning {
     color: red; }
 
 @media only screen and (max-width: 767px) {

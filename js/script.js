@@ -25,6 +25,11 @@
 		location.href = '/registration.html';
 	});
 
+	// Link to task list
+	$('body').on('click', '.tasks-btn', () => {
+		location.href = '/task_list.html';
+	});
+
 	// Logout
 	$('header').on('click', '#logout-btn', () => {
 		$.ajax({

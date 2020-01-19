@@ -16,7 +16,7 @@
       for($i = 0; $i < count($img_name); $i++) {
         if($img_name[$i] == $path) {
           unset($img_name[$i]);
-          unlink($path);
+          unlink($path); //remove image
         }
       }
 

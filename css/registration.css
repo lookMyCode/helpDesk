@@ -37,6 +37,12 @@ main {
     main .registr-form p {
       color: #41f01d;
       margin: 20px 0; }
+    main .registr-form .input_descr {
+      color: #333;
+      font-size: 0.8em; }
+      main .registr-form .input_descr sub {
+        color: red;
+        font-size: 1.2em; }
     main .registr-form p.reg-warning {
       color: red; }
     main .registr-form button {

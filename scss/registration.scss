@@ -48,6 +48,16 @@ main {
             margin: 20px 0;
         }
 
+        .input_descr {
+            color: #333;
+            font-size: 0.8em;
+
+            sub {
+                color: red;
+                font-size: 1.2em;
+            }
+        }
+
         p.reg-warning {
             color: red;
         }

@@ -27,7 +27,7 @@
             'autor_specialization' => $result['specialization'],
             'autor_location' => $result['location'],
             'autor_photo' => $result['photo'],
-            'autor_average_rating' => $result['average_rating'],
+            'autor_average_rating' => round($result['average_rating'], 1),
             'autor_number_ratings' => $result['number_ratings'],
             'publication_date' => [
               'day' => date('j', $result['publication_date']),

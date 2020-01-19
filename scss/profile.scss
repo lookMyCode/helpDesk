@@ -20,6 +20,11 @@ main {
         padding: 25px;
         color: #908A98;
 
+        .mini_preloader_wrap {
+            grid-column: 1 / 3;
+            grid-row: 1 / 7;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             color: #292929;
             margin-bottom: 10px;
@@ -228,6 +233,7 @@ main {
             .review-form {
                 width: 100%;
                 height: 150px;
+                margin-top: 30px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -253,6 +259,7 @@ main {
                     color: #fff;
                     border-radius: 3px;
                     transition: 0.3s;
+                    cursor: pointer;
 
                     &:hover {
                         background-color: $blue;

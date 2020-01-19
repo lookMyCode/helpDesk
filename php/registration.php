@@ -28,7 +28,9 @@
 
 					$pass = password_hash($pass1, PASSWORD_BCRYPT);
 
-					$query_result = mysqli_query($connect, "INSERT INTO `users`(`mail`, `password`, `name`) VALUES ('" . mysqli_real_escape_string($connect, $mail) . "', '" . mysqli_real_escape_string($connect, $pass) . "' ,'" . mysqli_real_escape_string($connect, $name) . "')");
+					$now = time();
+
+					$query_result = mysqli_query($connect, "INSERT INTO `users`(`mail`, `password`, `name`, `date_registration`, `appreciated`) VALUES ('$mail', '$pass', '$name', '$now', '[]')");
 
 					if($query_result) {
 						$query_result = mysqli_query($connect, "SELECT `id_user` FROM `users` WHERE `mail` = '" . mysqli_real_escape_string($connect, $mail) . "'");
@@ -40,6 +42,19 @@
 							$_SESSION['id_user'] = $result[0]['id_user'];
 							$_SESSION['mail'] = $mail;
 							$_SESSION['name'] = $name;
+
+							$mail_text = 'Witam!' . "\r\n" . 
+							"\r\n" . 
+							'Dziękuję za rejestrację na serwisie Help-Place.pl'  . "\r\n" . 
+							'Mam nadzieję że mój serwis będzie Ci pożyteczny!'  . "\r\n" . 
+							"\r\n" . 
+							'Jesli nie tworzyłesz konta - proszę o odpowiedź!'  . "\r\n" . 
+							'Do zobaczenia na Help-Place.pl';
+							
+							$headers = 'From: admin@help-place.pl' . "\r\n" .
+							'Reply-To: admin@help-place.pl' . "\r\n" .
+							'X-Mailer: PHP/' . phpversion();
+							mail($mail, 'Dziękuję za rejestrację na serwisie Help-Place.pl!', $mail_text, $headers);
 
 							$response = [
 								'status'=> '1'

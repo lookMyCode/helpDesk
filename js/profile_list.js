@@ -4,6 +4,11 @@
   let params = getParams();
   let flag = false;
 
+  $(window).resize(function() {
+    window.outerWidth > 991 ? $('.filter_param').show() : $('.filter_param').hide();
+  });
+  $('#filter_toggle').on('click', showFilter);
+
   $('.filter_inputs').on('change', makeURL);
 
   $(window).on('popstate', makeURL);
@@ -29,8 +34,18 @@
 
   makeURL();
 
+  function showFilter() {
+    $('#filter_toggle').off('click', showFilter).on('click', hideFilter).html('<span>Zwiń</span>');
+    $('.filter_param').slideDown(700).css('display', 'flex');
+  }
+
+  function hideFilter() {
+    $('#filter_toggle').off('click', hideFilter).on('click', showFilter).html('<span>Rozwiń</span>');
+    $('.filter_param').slideUp(700);
+  }
+
   function makeURL() {
-    $('.filter_role').map( (index, item) => {
+    /*$('.filter_role').map( (index, item) => {
       delete params[''];
       $(item).prop('checked') ? params.role = $(item).val() : null;
     } );
@@ -45,6 +60,23 @@
 
     history.replaceState({}, null, `?${searchStr}`);
 
+    loadPage();*/
+
+    let params = {};
+    $('.filter_inputs').map( (index, item) => {
+      $(item).prop('checked') ? params[$(item).attr('name')] = $(item).val() : null;
+    } );
+
+    let arr = [];
+
+    for (let key in params) {
+      arr.push(`${key}=${params[key]}`);
+    }
+    
+    let searchStr = arr.join('&');
+
+    history.replaceState({}, null, `?${searchStr}`);
+    
     loadPage();
   };
 
