@@ -1,8 +1,5 @@
 ;(function() {
 
-  let preloader = document.createElement('div');
-    $(preloader).addClass('mini_preloader_wrap').html('<div class="mini_preloader"><div class="mini_preloader_item"></div><div class="mini_preloader_item"></div><div class="mini_preloader_item"></div><div class="mini_preloader_item"></div><div class="mini_preloader_item"></div></div>');
-
   let id = getId();
 
   $('.profile-wrap > .mini_preloader_wrap').css('opacity', '1');
@@ -33,6 +30,12 @@
     history.replaceState({}, null, `?id=${id}`);
     loaderPage();
   } );
+
+  $('.profile-wrap').on('click', '.link_to_reviewer', ({target}) => {
+    const {id} = target.closest('article').dataset;
+    
+    location.href = `/profile.html?id=${id}`;
+  });
   
   $('.profile-wrap').on('click', '#edit_profile', () => {
     location.href = '/edit_profile.html';
@@ -672,17 +675,18 @@
     if (data.data.reviews.reviews != 0) {
       data.data.reviews.reviews.map( (item, index) => {
         let review = document.createElement('article');
-        $(review).addClass('review');
+        $(review).addClass('review').attr('data-id', item.id_user);
   
         let reviewImg = document.createElement('img');
-        $(reviewImg).attr({
-          'src': item.photo,
+        const imgPath = item.photo ? item.photo : '/img/default.jpg';
+        $(reviewImg).addClass('link_to_reviewer').attr({
+          'src': imgPath,
           'alt': `${item.name} photo`
         });
         review.appendChild(reviewImg);
   
         let reviewH5 = document.createElement('h5');
-        $(reviewH5).html(item.name);
+        $(reviewH5).html(item.name).addClass('link_to_reviewer');
         review.appendChild(reviewH5);
   
         let reviewDate = document.createElement('p');
@@ -794,17 +798,18 @@
     let reviewWrap = document.querySelector('.review-wrap');
 
     let review = document.createElement('article');
-    $(review).addClass('review');
+    $(review).addClass('review').attr('data-id', data.id_user);
 
     let reviewImg = document.createElement('img');
-    $(reviewImg).attr({
-      'src': data.photo,
+    const imgPath = data.photo ? data.photo : '/img/default.jpg';
+    $(reviewImg).addClass('link_to_reviewer').attr({
+      'src': imgPath,
       'alt': `${data.name} photo`
     });
     review.appendChild(reviewImg);
 
     let reviewH5 = document.createElement('h5');
-    $(reviewH5).html(data.name);
+    $(reviewH5).html(data.name).addClass('link_to_reviewer');
     review.appendChild(reviewH5);
 
     let reviewDate = document.createElement('p');

@@ -24,6 +24,10 @@ li > a {
     padding: 5px 10px;
 }
 
+textarea {
+    resize: none;
+}
+
 .hp-btn {
     @include blockSize(100%, 45px);
     background-color: #0CCEC0;
@@ -63,6 +67,22 @@ li > a {
         background-color: #000;
         left: 50%;
     }
+}
+
+.green {
+    color: $green;
+}
+
+.blue {
+    color: $blue;
+}
+
+.red {
+    color: red;
+}
+
+.brown {
+    color: brown;
 }
 
 /* Preloader */

@@ -1,5 +1,7 @@
 ;(function() {
 
+  let displayWidth = window.outerWidth;
+
   ( () => {
     return new Promise( (res, rej) => {
       if(window.auth || isAutorized()) {
@@ -26,7 +28,10 @@
   } );
 
   $(window).resize(function() {
-    window.outerWidth > 991 ? $('.filter_param').show() : $('.filter_param').hide();
+    if(window.outerWidth != displayWidth) {
+      window.outerWidth > 991 ? $('.filter_param').show() : $('.filter_param').hide();
+      displayWidth = window.outerWidth;
+    }
   });
   $('#filter_toggle').on('click', showFilter);
 

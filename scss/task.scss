@@ -11,7 +11,7 @@ main {
   .task_wrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(9, auto);
+    grid-template-rows: repeat(10, auto);
     width: 100%;
     max-width: 991px;
     border: 2px solid #41F01D;
@@ -33,6 +33,11 @@ main {
 
       img {
         width: 50%;
+        cursor: pointer;
+
+        &:hover ~ h2 {
+          text-decoration: underline;
+        }
       }
 
       span {
@@ -45,6 +50,11 @@ main {
 
       h2 {
         font-size: 1.8em;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       .hp-btn {
@@ -61,6 +71,18 @@ main {
 
       p {
         margin: 10px 0;
+
+        i {
+          margin-right: 5px;
+        }
+
+        a {
+          color: $green !important;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
 
@@ -94,8 +116,103 @@ main {
       justify-content: space-around;
 
       img {
-        width: 19%;
+        width: 50%;
         height: 100%;
+      }
+    }
+
+    .offers-wrap {
+      grid-row: 9 / 10;
+      grid-column: 1 / 4;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid $blue;
+
+      h2 {
+          text-align: center;
+          margin-bottom: 40px;
+      }
+
+      .offer {
+          width: 100%;
+          padding: 20px 10px;
+          background-color: #F5F6F7;
+          margin: 10px 0;
+          border-radius: 5px;
+          border: 1px solid $green;
+
+          img {
+              width: 10%;
+              min-width: 50px;
+              float: left;
+              margin: 0 20px 20px 0;
+              cursor: pointer;
+
+              &:hover+h5 {
+                text-decoration: underline;
+              }
+          }
+
+          h5 {
+              float: left;
+              font-size: 1.2em;
+              cursor: pointer;
+
+              &:hover {
+              text-decoration: underline;
+              }
+          }
+
+          .allow_realize_btn {
+            max-width: 200px;
+            margin-bottom: 20px;
+          }
+
+          p {
+              margin-bottom: 15px;
+          }
+
+          div, p {
+              clear: both;
+              width: 100%;
+          }
+      }
+
+      .offer-form {
+          width: 100%;
+          height: 150px;
+          margin-top: 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          textarea {
+              width: 79%;
+              height: 100%;
+              border: 1px solid $green;
+              border-radius: 5px;
+              padding: 10px;
+              font-size: 0.9em;
+          }
+
+          #offer-send {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 19%;
+              padding: 10px;
+              font-size: 1.1em;
+              border: 0;
+              background-color: #0CCEC0;
+              color: #fff;
+              border-radius: 3px;
+              transition: 0.3s;
+              cursor: pointer;
+
+              &:hover {
+                  background-color: $blue;
+              }
+          }
       }
     }
   }
@@ -136,6 +253,10 @@ main {
       .task_imgs {
         grid-column: 1 / 4;
         grid-row: 8 / 9;
+
+        img {
+          width: 80%;
+        }
       }
     }
   }
@@ -165,6 +286,15 @@ main {
   
       .task_date {
         grid-column: 1 / 4;
+      }
+
+      .task_imgs {
+        grid-column: 1 / 4;
+        grid-row: 8 / 9;
+
+        img {
+          width: 100%;
+        }
       }
     }
   }

@@ -34,6 +34,10 @@ li > a {
   padding: 5px 10px;
 }
 
+textarea {
+  resize: none;
+}
+
 .hp-btn {
   width: 100%;
   height: 45px;
@@ -77,6 +81,22 @@ li > a {
   color: #fff;
   background-color: #000;
   left: 50%;
+}
+
+.green {
+  color: #41f01d;
+}
+
+.blue {
+  color: #750fc2;
+}
+
+.red {
+  color: red;
+}
+
+.brown {
+  color: brown;
 }
 
 /* Preloader */

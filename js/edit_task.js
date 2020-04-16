@@ -31,6 +31,16 @@
   $('#submit_task').on('click', (e) => {
 
     e.preventDefault();
+
+    $('.edit_task_data .mini_preloader_wrap').css('opacity', '1');
+
+    if(!$('#task_title').val() || !$('#task_text').val()) {
+      !$('#task_title').val() ? $('#task_title').css('borderColor', 'red') : $('#task_title').css('borderColor', '#ECECEC'); 
+      !$('#task_text').val() ? $('#task_text').css('borderColor', 'red') : $('#task_text').css('borderColor', '#ECECEC');
+      $('.edit_task_data .mini_preloader_wrap').css('opacity', '0');
+      return false;
+    }
+
     ( () => {
       return new Promise( (res, rej) => {
         let data = new FormData($('#task_form')[0]);
@@ -50,9 +60,14 @@
         success: function (answer) {
           let data = JSON.parse(answer);
 
+          $('.edit_task_data .mini_preloader_wrap').css('opacity', '0');
+
           if(data.status == '1') {
             $('.warning').html('');
             $('.success').html('Zadanie zostało zmienione');
+
+            $('#task_title').css('borderColor', '#ECECEC');
+            $('#task_text').css('borderColor', '#ECECEC');
 
             setTimeout(() => {
               loadPage(data.data);
@@ -72,6 +87,39 @@
       });
     } );
 
+  });
+
+  $('#remove_task_btn').on('click', () => {
+    $('.remove_task .mini_preloader_wrap').css('opacity', '1');
+
+    let accept_remove = confirm('Usunięcie zadania jest bezpowrotne. Czy napewno chcech usunąć zadanie?');
+    if(accept_remove) {
+      ( () => {
+        return new Promise( (res, rej) => {
+          res( getParams() );
+        } );
+      } )().then( (data) => {
+        $.ajax({
+          type: 'POST',
+          url: '/php/remove_task.php', 
+          data: data,
+          success: function (answer) {
+            $('.remove_task .mini_preloader_wrap').css('opacity', '0');
+            
+            let data = JSON.parse(answer);
+
+            if(data.status == 1) {
+              location.href = '/profile.html';
+            } else {
+              $('.remove_warning').html('Błąd serwera');
+            }
+          },
+          error: function (err) {
+            console.log(err);
+          }
+        });
+      } );
+    }
   });
 
   $('.edit_task_data').on('click', '#remove_img', (e) => {

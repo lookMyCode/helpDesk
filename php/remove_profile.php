@@ -30,7 +30,7 @@ if(!$connect) {
         unlink('..' . $photo);
       }
 
-      $query_result = mysqli_query($connect, "SELECT `images` FROM `tasks` WHERE `autor_id` = 1");
+      $query_result = mysqli_query($connect, "SELECT `images` FROM `tasks` WHERE `autor_id` = '$id_user'");
 
       for($result = []; $row = mysqli_fetch_assoc($query_result); $result[] = $row);
 

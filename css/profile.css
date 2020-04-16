@@ -138,10 +138,16 @@ main {
           width: 10%;
           min-width: 50px;
           float: left;
-          margin: 0 20px 20px 0; }
+          margin: 0 20px 20px 0;
+          cursor: pointer; }
+          main article.profile-wrap .review-wrap .review img:hover + h5 {
+            text-decoration: underline; }
         main article.profile-wrap .review-wrap .review h5 {
           float: left;
-          font-size: 1.2em; }
+          font-size: 1.2em;
+          cursor: pointer; }
+          main article.profile-wrap .review-wrap .review h5:hover {
+            text-decoration: underline; }
         main article.profile-wrap .review-wrap .review p {
           margin-bottom: 15px; }
         main article.profile-wrap .review-wrap .review div, main article.profile-wrap .review-wrap .review p {

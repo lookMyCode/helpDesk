@@ -124,7 +124,7 @@
         }
 
 
-        $query_result = mysqli_query($connect, "SELECT DISTINCT `users`.`photo`, `users`.`name`, `reviews`.`date_review`, `reviews`.`text` FROM `reviews` JOIN `users` ON `reviews`.`autor_id` = `users`.`id_user` WHERE `reviews`.`target_id` = '$id_user' ORDER BY `reviews`.`date_review` DESC LIMIT 4");
+        $query_result = mysqli_query($connect, "SELECT DISTINCT `users`.`id_user`, `users`.`photo`, `users`.`name`, `reviews`.`date_review`, `reviews`.`text` FROM `reviews` JOIN `users` ON `reviews`.`autor_id` = `users`.`id_user` WHERE `reviews`.`target_id` = '$id_user' ORDER BY `reviews`.`date_review` DESC LIMIT 4");
 
         for($result = []; $row = mysqli_fetch_assoc($query_result); $result[] = $row);
 

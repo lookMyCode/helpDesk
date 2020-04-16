@@ -56,6 +56,13 @@
     $isset_img = false;
   }
 
+  if( $response['status'] == 1 && ( empty($title) || empty($title) ) ) {
+    $response = [
+      'status' => '0'
+    ];
+  }
+
+
   if($response['status'] == 1) {
     require_once 'db_connect.php';
 

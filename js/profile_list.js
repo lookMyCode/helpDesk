@@ -3,9 +3,13 @@
 
   let params = getParams();
   let flag = false;
+  let displayWidth = window.outerWidth;
 
   $(window).resize(function() {
-    window.outerWidth > 991 ? $('.filter_param').show() : $('.filter_param').hide();
+    if(window.outerWidth != displayWidth) {
+      window.outerWidth > 991 ? $('.filter_param').show() : $('.filter_param').hide();
+      displayWidth = window.outerWidth;
+    }
   });
   $('#filter_toggle').on('click', showFilter);
 
