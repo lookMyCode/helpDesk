@@ -85,6 +85,30 @@ textarea {
     color: brown;
 }
 
+#dialogues-btn {
+    position: relative;
+
+    .count_unread {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        font-size: 0.7em;
+        width: 25px;
+        height: 25px;
+        background-color: $blue;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 25px;
+        display: none;
+    }
+}
+
+.is_unread {
+    .count_unread {
+        display: block !important;
+    }
+}
+
 /* Preloader */
 #preloader-wrap {
     @include position(fixed, 0, 0);

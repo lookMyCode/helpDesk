@@ -42,6 +42,10 @@ if(mb_strlen($pass2) >= 6 && mb_strlen($pass2) <= 30 && $pass3 === $pass2) {
         'status' => '0'
       ];
     }
+} else {
+  $response = [
+    'status' => '2'
+  ];
 }
 
 echo json_encode($response);

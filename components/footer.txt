@@ -13,7 +13,7 @@
 </nav>
 <div class="footer-contact">
     <span>
-    Kontakt ze mną: <a href="mailto:dmytro-medynskyi@ukr.net">dmytro-medynskyi@ukr.net</a>
+    Kontakt ze mną: <a href="mailto:kontakt@help-place.pl">kontakt@help-place.pl</a>
     </span>
 </div>
 <div class="footer-copy">

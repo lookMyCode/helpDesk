@@ -1,5 +1,6 @@
-<div class="acc-btn-autorized" title="Wiadomości">
+<div class="acc-btn-autorized" id="dialogues-btn" title="Wiadomości">
     <i class="far fa-comments"></i>
+    <div class="count_unread"></div>
 </div>
 <div class="acc-btn-autorized" id="profile-btn" title="Profił">
     <i class="far fa-address-card"></i>
